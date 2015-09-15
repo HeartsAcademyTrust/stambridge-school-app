@@ -6,13 +6,16 @@ class Gallery extends React.Component {
 		var imgStyle = {
 			display: 'block',
 			marginRight: 'auto',
-			marginLeft: 'auto'
+			marginLeft: 'auto',
+		  width: '260px'
 		};
 
 		return(
 			<div className="container">
 				<a href="http://www.heartsacademytrust.co.uk/">
-					<img style={imgStyle} className="center" src="http://www.heartsacademytrust.co.uk/wp-content/uploads/2014/04/HEARTS-logoFIN-01-Copy1.png"/>
+					<img style={imgStyle} 
+					className="center" 
+					src="http://www.heartsacademytrust.co.uk/wp-content/uploads/2014/04/HEARTS-logoFIN-01-Copy1.png"/>
 				</a>
 
 				<h2 className="indigo-text text-darken-4">Welcome to Stambridge School</h2>

@@ -2,6 +2,7 @@ import React from 'react';
 import {RouteHandler} from 'react-router';
 import mui from 'material-ui';
 import Banner from './Banner';
+import Footer from './Footer';
 import Navigation from './Navigation';
 
 var ThemeManager = new mui.Styles.ThemeManager();
@@ -14,15 +15,17 @@ class Main extends React.Component{
   }
 	render(){
 		return (
-			<div>
+			<div className="container">
 				<Banner />
 
 				<div className="row">
 					<Navigation />
-
-					<div className="white row">
+					
+					<div className="white">	
 						<RouteHandler />
 					</div>
+
+					<Footer />
 				</div>
 			</div>
 		)

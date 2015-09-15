@@ -22,12 +22,20 @@ class Policies extends React.Component{
 	}
 	render(){
 		return(
-			<div className="container">
-				<h1 className="indigo-text text-darken-4">Policies</h1>
-				<p className="flow-text">We have some general policies that apply to all the schools a part of the <a href="http://www.heartsacademytrust.co.uk/trust-information/policies/">Hearts Academy Trust</a></p>
-				<p className="flow-text">Here is a list of the policies that are specific to <b className="indigo-text text-darken-4">Stambridge Primary School</b>:</p>
+			<div className="row">
+				<div className="container">
+					<h1 className="indigo-text text-darken-4">Policies</h1>
+					<p className="flow-text">
+						We have some general policies that apply to all the schools a part of the 
+						<a href="http://www.heartsacademytrust.co.uk/trust-information/policies/"> Hearts Academy Trust</a>
+					</p>
+					<p className="flow-text">
+						Here is a list of the policies that are specific to 
+						<b className="indigo-text text-darken-4"> Stambridge Primary School</b>:
+					</p>
 
-				<PoliciesList policies={this.state.policies} />
+					<PoliciesList policies={this.state.policies} />
+				</div>
 			</div>
 		)
 	}

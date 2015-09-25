@@ -1,73 +1,74 @@
 import React from 'react';
 import moment from 'moment';
 import helpers from '../../utils/helpers';
+import NewslettersByYearList from './NewslettersByYearList';
 
 class Newsletters extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			newsletters: [],
+			newsletters: []
 		};
 	}
 	componentDidMount(){
 		helpers.getNewsletters
-		  .then((response) => {
-		    this.setState({
-		    	newsletters: response.data,
-		    });
-		  })
-		  .catch((response) => {
-		    console.log(response);
-		  });
-		  $('.collapsible').collapsible();
+		.then((response) => {
+			this.setState({
+				newsletters: response.data
+			});
+		})
+		.catch((response) => {
+			console.log(response);
+		});
+	}
+	componentDidUpdate(){
+		$('.collapsible').collapsible();
 	}
 	render() {
-		var newslettersByYear = React.addons.createFragment({
-			newslettersByYear: this.state.newsletters.reduce((groupedByYear, newsletter) => {
-				var year = moment(newsletter.date_published).year();
-				if (!groupedByYear[year])
-					groupedByYear[year] = [];
-				groupedByYear[year] = newsletter;
-				//console.log(groupedByYear)
-				return groupedByYear;
-			}, [])
+		var newslettersByYear= this.state.newsletters.reduce((groupedByYear, newsletter) => {
+			function findYear(newslettersByYear, searchYear) {
+				for(var i = 0; i < newslettersByYear.length; i++) {
+					if(newslettersByYear[i].year === searchYear) {
+						return i;
+					}
+				}
+				return -1;
+			}
+
+			var year = moment(newsletter.date_published).year();
+			var yearIndex = findYear(groupedByYear, year);
+			if (yearIndex === -1){
+				groupedByYear.push({year: year, newsletters: [newsletter]});
+			}
+			else {
+				groupedByYear[yearIndex].newsletters.push(newsletter);
+			}
+			return groupedByYear;
+		}, []);
+
+		newslettersByYear.sort((a, b) => {
+			if (a.year < b.year) {
+				return 1; 
+			}
+			return 0 - 1;
 		});
 
-		console.log(newslettersByYear.children)
+		var newsletters = (
+			<NewslettersByYearList newslettersByYear={newslettersByYear} />
+		); 
 
-		var sortedNewslettersByYear = [];
-
-		for (var newslettersYear in newslettersByYear.newslettersByYear) {
-			sortedNewslettersByYear.push([newslettersYear, newslettersByYear.newslettersByYear[newslettersYear]])
+		if (newslettersByYear.length === 0){
+			newsletters = <p className="flow-text">There are currently no newsletters that have been uploaded</p>;
 		}
-
-		sortedNewslettersByYear.sort((a, b) => {if (a[0] < b[0]) return 1; return 0 - 1})
-		
-		//console.log(sortedNewslettersByYear[1])		
-		var formattedNewslettersByYear = sortedNewslettersByYear.map((yearsNewsletters, index) => {
-			var newsletters = yearsNewsletters[1].map((newsletter, index) => {
-				<a href={newsletter.file} className="collection-item col-sm-6  col-md-4 col-lg-6 purple-text text-darken-4" key={index}>
-					<i className="material-icons left">description</i>{moment(newsletter.date_published).format("Do MMMM YYYY")}
-				</a>
-			});
-			return (
-				<li key={index}>
-					<div className="collapsible-header">{newslettersYear[0]}</div>
-					<div className="collapsible-body">{newsletters}</div>
-				</li>
-			)
-		});
 		return (
 			<div className="row">
 				<div className="container">
 					<h1 className="indigo-text text-darken-4">Newsletters</h1>
-					<ul className="collapsible" data-collapsible="accordion">
-						{newslettersByYear}
-					</ul>
+					{newsletters}
 				</div>
 			</div>
-		)
-	};
-};
+		);
+	}
+}
 
 export default Newsletters;

@@ -12,14 +12,15 @@ class VacancyList extends React.Component{
             </div>
           </div>
         </div>
-			)
+			);
 		});
+		
 		return(
 			<div>
 				{vacancies}
 			</div>
-		)
-	};
+		);
+	}
 }
 
 export default VacancyList;

@@ -8,10 +8,10 @@ import Navigation from './Navigation';
 var ThemeManager = new mui.Styles.ThemeManager();
 
 class Main extends React.Component{
-  getChildContext() { 
-    return {
-      muiTheme: ThemeManager.getCurrentTheme()
-    };
+  getChildContext() {
+		return{
+			muiTheme: ThemeManager.getCurrentTheme()
+		};
   }
 	render(){
 		return (
@@ -28,9 +28,9 @@ class Main extends React.Component{
 					<Footer />
 				</div>
 			</div>
-		)
+		);
 	}
-};
+}
 
 Main.childContextTypes = {
 	muiTheme: React.PropTypes.object

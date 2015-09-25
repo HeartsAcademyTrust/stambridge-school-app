@@ -7,18 +7,18 @@ class Staff extends React.Component{
 		super(props);
 		this.state = {
 			departments: []
-		}
+		};
 	}
 	componentDidMount(){
 		helpers.getDepartments
-		  .then((response) => {
-		    this.setState({
-		    	departments: response.data
-		    });
-		  })
-		  .catch((response) => {
-		    console.log(response);
-		  });
+		.then((response) => {
+			this.setState({
+				departments: response.data
+			});
+		})
+		.catch((response) => {
+			console.log(response);
+		});
 	}
 	render(){
 		var departments = this.state.departments.map((department, index) => {
@@ -28,9 +28,10 @@ class Staff extends React.Component{
 						<h5 className="indigo-text text-darken-4">{department.name}</h5>
 						<StaffList staff={department.staff} />
 					</div>	
-				)
+				);
 			}
 		});
+
 		return(
 			<div className="row">
 				<div className="container">
@@ -42,8 +43,8 @@ class Staff extends React.Component{
 					{departments}
 				</div>
 			</div>
-		)
+		);
 	}
-};
+}
 
 export default Staff;

@@ -1,15 +1,26 @@
+var path = require('path');
+var webpack = require('webpack');
+
 module.exports = {
-	entry: "./app/App.js",
+	devtool: 'eval',
+	entry: [
+		'webpack-dev-server/client?http://localhost:8080',
+		'webpack/hot/only-dev-server',
+		'./app/App.js'
+	],
 	output: {
-		filename: "public/bundle.js"
+		path: path.join(__dirname, 'public'),
+		filename: 'bundle.js',
+		publicPath: '/public/'
 	},
+	plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
 	module: {
-		loaders: [
-			{
-				test: /\.jsx?$/,
-				exlude: /(node_nodules|bower_components)/,
-				loader: 'babel'
-			}
-		]
+		loaders: [{
+			test: /\.jsx?$/,
+			include: path.join(__dirname, 'app'),
+			loaders: ['react-hot', 'babel']
+		}]
 	}
-}	
+};

@@ -1,13 +1,12 @@
 import React from 'react';
-import moment from 'moment';
 
 class UpcomingTermDate extends React.Component{
 	render() {
 		var seasonStyle = {
 			backgroundImage: `linear-gradient(
-	      rgba(0, 0, 0, 0.5),
-	      rgba(0, 0, 0, 0.5)
-    	),${this.props.img_file}`,
+				rgba(0, 0, 0, 0.5),
+				rgba(0, 0, 0, 0.5)
+			),${this.props.img_file}`,
 			backgroundSize: 'cover',
 			opacity: '.96'
 		};
@@ -24,12 +23,12 @@ class UpcomingTermDate extends React.Component{
         </div>
         <div className="card-action">
           <a href="#calender" className="waves-effect btn-flat col-xs-12" style={buttonStyle}>
-          	<i className="material-icons right">send</i>All Term Dates
+						<i className="material-icons right">send</i>All Term Dates
           </a>
         </div>
       </div>
-		)
+		);
 	}
-};
+}
 
 export default UpcomingTermDate;

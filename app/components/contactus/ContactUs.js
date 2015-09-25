@@ -14,22 +14,22 @@ class ContactUs extends React.Component{
 						marginWidth="0" 
 						style={{border:0}}
 						src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAV97yzUE-uxWk2rMFZ8wmpQNvSWHrvCfQ
-				      &q=Stambridge+County+Primary+School" allowFullScreen>>
-      		</iframe>
-      		<div className="col-xs-12 col-xs-offset-4 flow-text">
-          	<a href="tel:+441702 544369"><i className="material-icons">phone</i> 01702 544369</a>
-          	<br/>
+							&q=Stambridge+County+Primary+School" allowFullScreen>
+					</iframe>
+					<div className="col-xs-12 col-xs-offset-4 flow-text">
+						<a href="tel:+441702 544369"><i className="material-icons">phone</i> 01702 544369</a>
+						<br/>
 						<a href="fax:+441702 530713"><i className="material-icons">print</i> 01702 530713</a>
 						<br/>
 						<a className="truncate" href="mailto:admin@stambridge.essex.sch.uk">
 							<i className="small material-icons">email</i>
-							 admin@stambridge.essex.sch.uk
+							admin@stambridge.essex.sch.uk
 						</a>
           </div>
 				</div>
 			</div>
-		)
+		);
 	}
-};
+}
 
 export default ContactUs;

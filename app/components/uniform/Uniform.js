@@ -91,12 +91,12 @@ class Uniform extends React.Component {
 						marginWidth="0" 
 						style={{border:0}}
 						src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAV97yzUE-uxWk2rMFZ8wmpQNvSWHrvCfQ
-				      &q=7+Roche+Cl,+Rochford,+Essex+SS4+1PX" allowFullScreen>>
+				      &q=7+Roche+Cl,+Rochford,+Essex+SS4+1PX" allowFullScreen>
 	      		</iframe>
 					</div>
 				</div>			
 			</div>
-		)
+		);
 	}
 }
 

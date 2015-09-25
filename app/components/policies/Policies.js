@@ -11,14 +11,14 @@ class Policies extends React.Component{
 	}
 	componentDidMount(){
 		helpers.getPolicies
-		  .then((response) => {
-		    this.setState({
-		    	policies: response.data
-		    });
-		  })
-		  .catch((response) => {
-		    console.log(response);
-		  });
+		.then((response) => {
+			this.setState({
+				policies: response.data
+			});
+		})
+		.catch((response) => {
+			console.log(response);
+		});
 	}
 	render(){
 		return(
@@ -37,8 +37,8 @@ class Policies extends React.Component{
 					<PoliciesList policies={this.state.policies} />
 				</div>
 			</div>
-		)
+		);
 	}
-};
+}
 
 export default Policies;

@@ -5,7 +5,7 @@ class CoreValues extends React.Component{
 	render(){
 		var imgRightFloatStyle = {
 			float: 'right'
-		}
+		};
 
 		return (
 			<div className="row">
@@ -69,8 +69,8 @@ class CoreValues extends React.Component{
 					</p>
 				</div>
 			</div>
-		)
+		);
 	}
-};
+}
 
 export default CoreValues;

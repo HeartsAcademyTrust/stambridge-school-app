@@ -1,5 +1,5 @@
 import React from 'react';
-import VacancyList from './VacancyList'
+import VacancyList from './VacancyList';
 import helpers from '../../utils/helpers';
 
 class Vacancies extends React.Component{
@@ -7,18 +7,18 @@ class Vacancies extends React.Component{
 		super(props);
 		this.state = {
 			departments: []
-		}
+		};
 	}
 	componentDidMount(){
 		helpers.getDepartments
-		  .then((response) => {
-		    this.setState({
-		    	departments: response.data
-		    });
-		  })
-		  .catch((response) => {
-		    console.log(response);
-		  });
+			.then((response) => {
+				this.setState({
+					departments: response.data
+				});
+			})
+			.catch((response) => {
+				console.log(response);
+			});
 	}
 	render() {
 		var vacancies = 0;
@@ -30,7 +30,7 @@ class Vacancies extends React.Component{
 						<h5 className="indigo-text text-darken-4">{department.name}</h5>
 						<VacancyList vacancies={department.vacancies} />
 					</div>	
-				)
+				);
 			}
 		});
 
@@ -39,14 +39,14 @@ class Vacancies extends React.Component{
 					<p className="flow-text">
 						If any these vacancies are of interest to you or you would
 						like some more information on them please <a href="#contact-us">Contact Us</a>
-				  </p>
+					</p>
 					{departments}
 			</div>
 		);
 
 		if (vacancies === 0){
 			text = (<p className="flow-text">Unfortunately, Stambridge School are not currently recruiting...</p>);
-		};
+		}
 
 		return(
 			<div className="row">
@@ -55,8 +55,8 @@ class Vacancies extends React.Component{
 					{text}
 				</div>
 			</div>
-		)
+		);
 	}
 }
 
-export default Vacancies
+export default Vacancies;

@@ -16,56 +16,56 @@ class LatestNews extends React.Component {
 	}
 	componentDidMount(){
 		helpers.getLatest()
-		  .then((response) => {
-		    this.setState({
-		    	events: response.events,
-		    	latest_newsletter: response.latest_newsletter,
-		    	term_dates: response.term_dates
-		    });
-		  })
-		  .catch((response) => {
-		    console.log(response);
-		  });
+		.then((response) => {
+			this.setState({
+				events: response.events,
+				latest_newsletter: response.latest_newsletter,
+				term_dates: response.term_dates
+			});
+		})
+		.catch((response) => {
+			console.log(response);
+		});
 	}
 	render(){
 		var term_dates = this.state.term_dates.filter((term_date) => {
-				return moment(term_date.end_time).isAfter(moment());
-			});
+			return moment(term_date.end_time).isAfter(moment());
+		});
 			
-		latest_termdate = "No Upcoming Term Date Information Available"
+		latest_termdate = 'No Upcoming Term Date Information Available';
 		if (term_dates.length > 0) {
 			var closest_time = term_dates[0].end_time;
 			if (moment(term_dates[0].start_time).isAfter(moment())) {
-				closest_time = moment(term_dates[0].start_time)
-			};
+				closest_time = moment(term_dates[0].start_time);
+			}
 			
 			var latest_termdate = term_dates.reduce((previous, current) => {
 				if ((moment(current.start_time).isAfter(moment()) && moment(current.start_time).isBefore(closest_time))
 					|| (moment(current.end_time).isAfter(moment()) && moment(current.end_time).isBefore(closest_time))){
 					return current;
-				};
+				}
 				return previous;
 			}, term_dates[0]);
-		};
+		}
 
-		var pos = "End";
+		var pos = 'End';
 
 		var date = moment(latest_termdate.end_time);
 		if (moment(latest_termdate.start_time).isAfter(moment())){
-			pos = "Start";
+			pos = 'Start';
 			date = moment(latest_termdate.start_time);
-		};
+		}
 
-		var formattedDate = `${pos} of ${latest_termdate.name} - ${date.format("ddd Do MMMM H:mm A")}`;
+		var formattedDate = `${pos} of ${latest_termdate.name} - ${date.format('ddd Do MMMM H:mm A')}`;
 
 		var imgFile = '';
 		var cardClass = 'card';
 
 		if (date.clone().add(1, 'M').quarter() == 1){
-			imgFile = 'url("../images/winter3.jpg")'
-			cardClass = 'card blue lighten-2'
+			imgFile = 'url("../images/winter3.jpg")';
+			cardClass = 'card blue lighten-2';
 		} else if (date.clone().add(1, 'M').quarter() == 2) {
-			imgFile = 'url("../images/spring2.jpg")'
+			imgFile = 'url("../images/spring2.jpg")';
 			cardClass = 'card pink lighten-3';
 		} else if (date.clone().add(1, 'M').quarter() == 3) {
 			imgFile = 'url("../images/summer4.jpg")';
@@ -73,7 +73,7 @@ class LatestNews extends React.Component {
 		} else {
 			imgFile = 'url("../images/autumn2.jpg")';
 			cardClass = 'card orange';
-		};
+		}
 		return (
 			<div>
 				<div className="col-xs-12 col-md-5">
@@ -88,8 +88,8 @@ class LatestNews extends React.Component {
 					<ThisWeek events={this.state.events} card_class={cardClass}/>
 				</div>
 			</div>	
-		)
+		);
 	}
-};
+}
 
-export default LatestNews
+export default LatestNews;

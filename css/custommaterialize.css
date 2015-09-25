@@ -19,3 +19,11 @@
 nav .no-pads {
 	padding: 0px;
 }
+
+.tabs .tab a {
+	color: #1E0449;
+}
+
+.tabs .tab a:hover {
+	color: #6743A3;
+}

@@ -17,8 +17,8 @@ class About extends React.Component {
 					and the wider community for the good of all.
 				</p>
 			</div>
-		)
+		);
 	}
-};
+}
 
-export default About
+export default About;

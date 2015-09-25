@@ -7,7 +7,7 @@ class Gallery extends React.Component {
 			display: 'block',
 			marginRight: 'auto',
 			marginLeft: 'auto',
-		  width: '260px'
+			width: '260px'
 		};
 
 		return(
@@ -25,8 +25,8 @@ class Gallery extends React.Component {
 					through a culture of success and achievement, in which individuals can flourish as confident, happy learners.
 				</p>
 			</div>
-		)
+		);
 	}
-};
+}
 
 export default Gallery;

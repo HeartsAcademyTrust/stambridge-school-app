@@ -13,8 +13,8 @@ class Banner extends React.Component{
 				</div>
 				<h2 className="col-lg-6 hidden-lg-down indigo-text text-darken-4">Primary School</h2>
 			</div>
-		)
+		);
 	}
-};
+}
 
-export default Banner
+export default Banner;

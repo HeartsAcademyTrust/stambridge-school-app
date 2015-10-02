@@ -1,0 +1,41 @@
+.side-nav li:hover,.side-nav .collapsible-header li.active {
+  background-color: #ffffff; 
+}
+
+.side-nav .collapsible-body li:hover,.side-nav .collapsible-body li.active,.side-nav .non-dropdown li:hover,.side-nav .non-dropdown li.active  {
+  background-color: #1A247E; 
+}
+
+.side-nav .collapsible-body li:hover a,.side-nav .collapsible-body li.active a,.side-nav .non-dropdown li:hover a,.side-nav .non-dropdown li.active a  {
+  color: #ffffff; 
+}
+
+.waves-effect.waves-indigo .waves-ripple {
+ /* The alpha value allows the text and background color
+ of the button to still show through. */
+  background-color: rgba(26, 36, 126, 0.65);
+}
+
+.waves-effect.waves-blue .waves-ripple {
+ /* The alpha value allows the text and background color
+ of the button to still show through. */
+  background-color: rgba(100, 180, 246, 0.65);
+}
+
+.waves-effect.waves-pink .waves-ripple {
+ /* The alpha value allows the text and background color
+ of the button to still show through. */
+  background-color: rgba(244, 143, 177, 0.65);
+}
+
+nav .no-pads {
+	padding: 0px;
+}
+
+.tabs .tab a {
+	color: #1E0449;
+}
+
+.tabs .tab a:hover {
+	color: #6743A3;
+}

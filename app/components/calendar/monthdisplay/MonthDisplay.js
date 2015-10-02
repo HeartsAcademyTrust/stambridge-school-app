@@ -6,8 +6,11 @@ class MonthDisplay extends React.Component {
 	render() {
 		return (
 			<div className="col-xs-12">
-				<DayNames />
-				<Weeks start_date={this.props.current_date}/>
+				<DayNames day_text_class={this.props.day_text_class}/>
+				<Weeks current_month={this.props.current_month} 
+					selected_date ={this.props.selected_date}
+					handle_select={this.props.handle_select.bind(this)}
+					day_button_class={this.props.day_button_class}/>
 			</div>
 		);
 	}

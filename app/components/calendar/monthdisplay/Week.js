@@ -1,24 +1,53 @@
 import React from 'react';
+import Radium from 'radium';
+import moment from 'moment';
 
 class Week extends React.Component {
 	render() {
 		var days = [],
-			date = this.props.date,
-			month = this.props.month;
+			date = moment(this.props.date),
+			current_month = moment(this.props.current_month),
+			month = current_month.month();
 
 		for (var i = 0; i < 7; i++) {
 			var day = {
 				name: date.format('dd').substring(0, 1),
 				number: date.date(),
-				isCurrentMonth: date.month() === month.month(),
-				isToday: date.isSame(new Date(), 'day'),
+				isCurrentMonth: date.month() === month,
 				date: date
 			};
+			
+			var dayWidth = 100/7,
+				background_button_color = this.props.day_button_class;
+			
+			background_button_color === 'blue lighten-2' ? background_button_color = '#64b5f6' : background_button_color;
+			background_button_color === 'pink lighten-3' ? background_button_color = '#f48fb1' : background_button_color;
+
+			var dayStyles = {
+				width: `${dayWidth}%`,
+				textAlign:'center',
+				display: 'inline-block',
+				height: '54px',
+				lineHeight: '56px',
+				':hover': {
+					backgroundColor: background_button_color
+				},
+				'@media (min-width: 320px)': {
+					paddingLeft: '0px',
+					paddingRight: '0px'
+				}
+			};
+			
+			var dayClass = `waves-effect waves-${this.props.day_button_class} btn-flat purple-text text-darken-3`;
+			
+			day.isCurrentMonth ? dayClass : dayClass = 'btn-large disabled';
+			day.date.isSame(moment(this.props.selected_date), 'day') ? dayStyles.backgroundColor = background_button_color : dayStyles;
 			days.push(
 				<a 
 				key={day.date.toString()} 
-				className={"day" + (day.isToday ? " today" : "") + (day.isCurrentMonth ? "" : " different-month") + (day.date.isSame(this.props.selected) ? " selected" : "")} 
-				onClick={this.props.select.bind(null, day)}>
+				style={dayStyles}
+				className={dayClass} 
+				onClick={this.props.handle_select.bind(this, day.date)}>
 					{day.number}
 				</a>);
 			date = date.clone();
@@ -26,11 +55,11 @@ class Week extends React.Component {
 		}
 
 		return (
-			<div className="week" key={days[0].toString()}>
+			<div key={days[0].toString()}>
 				{days}
 			</div>
 		);
 	}
 }
 
-export default Week;
+export default Radium(Week);

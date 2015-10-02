@@ -28,7 +28,7 @@ class StatutoryInfo extends React.Component {
 					<h2 className="indigo-text text-darken-4">Statutory Information</h2>
 					<p className="flow-text">
 					You can find all the information on the schools expenses, premiums, provisions 
-					and general finances below.
+					and general finances here.
 					</p>
 					<StatutoryInfoList info={this.state.statuatory_info}/>
 				</div>

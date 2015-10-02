@@ -3,18 +3,20 @@ import helpers from '../../utils/helpers';
 import moment from 'moment';
 import MonthSlider from './MonthSlider';
 import MonthDisplay from './monthdisplay/MonthDisplay';
+import EventsList from './events/EventsList';
 
 class Calendar extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
 			events: [],
-			current_date: moment()
+			current_month: moment(), 
+			selected_date: moment()
 		};
 	}
 	componentDidMount(){
-		var current_date = this.state.current_date; 
-		helpers.getEvents(current_date.startOf('month').format('YYYY-MM-DD'), current_date.endOf('month').format('YYYY-MM-DD'))
+		var current_month = this.state.current_month.clone(); 
+		helpers.getEvents(current_month.startOf('month').format('YYYY-MM-DD'), current_month.endOf('month').format('YYYY-MM-DD'))
 		.then((response) => {
 			this.setState({
 				events: response.data
@@ -25,30 +27,90 @@ class Calendar extends React.Component {
 		});
 	}
 	handleAddMonth(){
+		var current_month = this.state.current_month,
+			new_current_month = current_month.add(1, 'M'),
+			query_date = new_current_month.clone(),
+			monthAlreadyLoaded = this.state.events.filter((event) => {
+				return moment(event.start_time).isSame(new_current_month, 'month');
+			});
+
+		if (monthAlreadyLoaded.length == 0){
+			helpers.getEvents(query_date.startOf('month').format('YYYY-MM-DD'), query_date.endOf('month').format('YYYY-MM-DD'))
+			.then((response) => {
+				this.setState({
+					events: this.state.events.concat(response.data)
+				});
+			})
+			.catch((response) => {
+				console.log(response);
+			});
+		}
+
 		this.setState({
-			events: [],
-			current_date: this.state.current_date.add(1, 'M')
+			current_month: new_current_month
 		});
 	}
 	handleSubtractMonth(){
+		var current_month = this.state.current_month,
+			new_current_month = current_month.subtract(1, 'M'),
+			query_date = new_current_month.clone(),
+			monthAlreadyLoaded = this.state.events.filter((event) => {
+				return moment(event.start_time).isSame(new_current_month, 'month');
+			});
+		
+		if (monthAlreadyLoaded.length == 0){
+			helpers.getEvents(query_date.startOf('month').format('YYYY-MM-DD'), query_date.endOf('month').format('YYYY-MM-DD'))
+			.then((response) => {
+				this.setState({
+					events: this.state.events.concat(response.data)
+				});
+			})
+			.catch((response) => {
+				console.log(response);
+			});
+		}
+
 		this.setState({
-			events: [],
-			current_date: this.state.current_date.subtract(1, 'M')
+			current_month: new_current_month
+		});
+	}
+	handleSelectDay(day) {
+		this.setState({
+			selected_date: day
 		});
 	}
 	render() {
-		var date = moment(this.state.current_date);
-		var monthClass = 'z-depth-1 valign-wrapper';
+		var currentMonth = moment(this.state.current_month),
+			selectedDate = moment(this.state.selected_date),
+			monthDisplayClass = 'z-depth-1 valign-wrapper',
+			dayTextClass = 'flow-text valign',
+			dayButtonColorClass = '';
 
-		if (date.clone().add(1, 'M').quarter() == 1){
-			monthClass += ' blue lighten-2';
-		} else if (date.clone().add(1, 'M').quarter() == 2) {
-			monthClass += ' pink lighten-3';
-		} else if (date.clone().add(1, 'M').quarter() == 3) {
-			monthClass += ' green';
+		if (currentMonth.clone().add(1, 'M').quarter() == 1){
+			monthDisplayClass += ' blue lighten-2';
+			dayTextClass += ' blue-text text-lighten-2';
+			dayButtonColorClass = 'blue lighten-2';
+		} else if (currentMonth.clone().add(1, 'M').quarter() == 2) {
+			monthDisplayClass += ' pink lighten-3';
+			dayTextClass += ' pink-text text-lighten-3';
+			dayButtonColorClass = 'pink lighten-3';
+		} else if (currentMonth.clone().add(1, 'M').quarter() == 3) {
+			monthDisplayClass += ' green';
+			dayTextClass += ' green-text';
+			dayButtonColorClass = 'green';
 		} else {
-			monthClass += ' orange';
+			monthDisplayClass += ' orange';
+			dayTextClass += ' orange-text';
+			dayButtonColorClass = 'orange';
 		}
+
+		var selectedDaysEvents = this.state.events.filter((event) => {
+			return moment(event.start_time).isSame(this.state.selected_date, 'day');
+		});
+
+		// var datesWithEvents = this.state.events.reduce((previous, current) => {
+
+		// }, []);
 
 		return(
 			<div className="row">
@@ -60,13 +122,21 @@ class Calendar extends React.Component {
 					
 					<div className="col-xs-12">
 						<MonthSlider 
-							current_date={this.state.current_date} 
-							month_class={monthClass}
+							current_month={this.state.current_month} 
+							month_class={monthDisplayClass}
 							add_month={this.handleAddMonth.bind(this)} 
 							subtract_month={this.handleSubtractMonth.bind(this)}/>
 					</div>
 
-					<MonthDisplay current_date={this.state.current_date}/>
+					<MonthDisplay current_month={this.state.current_month}
+						selected_date={this.state.selected_date} 
+						// dates_with_events={datesWithEvents}
+						handle_select={this.handleSelectDay.bind(this)}
+						day_button_class={dayButtonColorClass}
+						day_text_class={dayTextClass}/>
+
+					<EventsList events={selectedDaysEvents}
+						selected_date={this.state.selected_date}/>
 				</div>
 			</div>
 		);

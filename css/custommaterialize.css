@@ -16,6 +16,18 @@
   background-color: rgba(26, 36, 126, 0.65);
 }
 
+.waves-effect.waves-blue .waves-ripple {
+ /* The alpha value allows the text and background color
+ of the button to still show through. */
+  background-color: rgba(100, 180, 246, 0.65);
+}
+
+.waves-effect.waves-pink .waves-ripple {
+ /* The alpha value allows the text and background color
+ of the button to still show through. */
+  background-color: rgba(244, 143, 177, 0.65);
+}
+
 nav .no-pads {
 	padding: 0px;
 }

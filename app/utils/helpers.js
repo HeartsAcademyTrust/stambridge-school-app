@@ -1,7 +1,7 @@
 import axios from 'axios';
 import moment from 'moment';
 
-var host = 'http://localhost:8000';
+var host = 'http://api-stambridge.rhcloud.com';
 var school = 'Stambridge%20Primary%20School';
 
 function getPolicies(){
@@ -13,7 +13,7 @@ function getDepartments(){
 }
 
 function getEvents(min_date, max_date){
-	return axios.get(`${host}/events/?school=${school}&term=False&min_date=${min_date}&max_date=${max_date}`);
+	return axios.get(`${host}/events/?school=${school}&min_start_date=${min_date}&max_start_date=${max_date}&term=False`);
 }
 
 function getNewsletters(){

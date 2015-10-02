@@ -23,9 +23,11 @@ class SchoolMenu extends React.Component {
 		return(
 			<div className="row">
 				<div className="container">
-					<h1 className="indigo-text text-darken-4">School Menu, Hopefully This works</h1>
+					<h1 className="indigo-text text-darken-4">School Menu</h1>
 					<p className="flow-text">{this.state.menu.text}</p>
-					<a style={{marginBottom:'10'}} href={this.state.menu.menu} className="btn-floating btn-large waves-effect waves-light purple darken-4">
+					<a style={{marginBottom:'10'}} 
+						href={this.state.menu.menu} 
+						className="btn-floating btn-large waves-effect waves-light purple darken-4">
 						<i className="material-icons">description</i>
 					</a>
 				</div>

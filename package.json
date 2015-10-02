@@ -8,7 +8,6 @@
     "application",
     "openshift"
   ],
-  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "start-dev": "node server.js",
@@ -20,7 +19,6 @@
     "npm": ">= 1.0.0"
   },
   "author": "Vasily Shelkov",
-  "license": "ISC",
   "dependencies": {
     "axios": "^0.5.4",
     "babel-core": "^5.8.23",
@@ -38,7 +36,8 @@
   },
   "devDependencies": {
     "eslint": "^1.5.0",
-    "eslint-plugin-react": "^3.4.2",
+    "eslint-plugin-react": "^3.4.2"
   },
-  "private": true
+  "private": true,
+  "main": "server.js"
 }

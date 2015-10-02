@@ -2,12 +2,22 @@
   "name": "stambridge-school-website",
   "version": "1.0.0",
   "description": "A website client for Stambridge Primary School",
+  "keywords": [
+    "OpenShift",
+    "Node.js",
+    "application",
+    "openshift"
+  ],
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "start-dev": "node server.js",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">= 0.6.0",
+    "npm": ">= 1.0.0"
   },
   "author": "Vasily Shelkov",
   "license": "ISC",
@@ -29,5 +39,6 @@
   "devDependencies": {
     "eslint": "^1.5.0",
     "eslint-plugin-react": "^3.4.2",
-  }
+  },
+  "private": true
 }

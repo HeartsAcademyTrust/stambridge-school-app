@@ -40,6 +40,7 @@ var helpers = {
 	getEvents(min_date, max_date) {
 		return getEvents(min_date, max_date);
 	},
+	getTermDates: getTermDates(),
 	getNewsletters: getNewsletters(),
 	getPolicies: getPolicies(),
 	getDepartments: getDepartments(),

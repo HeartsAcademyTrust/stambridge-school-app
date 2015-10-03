@@ -42,6 +42,12 @@ class Week extends React.Component {
 			
 			day.isCurrentMonth ? dayClass : dayClass = 'btn-large disabled';
 			day.date.isSame(moment(this.props.selected_date), 'day') ? dayStyles.backgroundColor = background_button_color : dayStyles;
+			if (this.props.dates_with_events.indexOf(day.number) > -1 && day.isCurrentMonth) {
+				dayStyles.borderColor = background_button_color;
+				dayStyles.borderStyle = 'solid';
+				dayStyles.borderWidth = 'medium';
+			}
+			
 			days.push(
 				<a 
 				key={day.date.toString()} 

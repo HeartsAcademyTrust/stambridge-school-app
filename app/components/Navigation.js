@@ -29,19 +29,19 @@ class Navigation extends React.Component{
 			<header>
 				<nav>
 					<div className="nav-wrapper indigo darken-4">
-						<a href="#" data-activates="mobile-nav" className="button-collapse col-xs-4 col-s-3 col-md-3">
+						<a data-activates="mobile-nav" className="button-collapse col-xs-3 col-sm-3 col-md-3">
 							<i className="material-icons">menu</i>
 						</a>
-						<a href="#" className="brand-logo col-xs-8 col-sm-9 col-md-9 hidden-lg-up ">
-							<div className="col-md-9">
+						<a href="#" className="brand-logo col-xs-9 col-sm-9 col-md-9 hidden-lg-up ">
+							<div className="col-md-8">
 								Stambridge Primary 
 								<span className="hidden-xs-down"> School</span>
 							</div>
 						</a>						
 						<ul className="side-nav" id="mobile-nav">
-							<li> 
+							<li>
 								<div className="col-xs-12">
-										<img className="img-responsive" src="../images/stambridgelogosmall.jpg" style={imgStyle}></img>
+									<img className="img-responsive" src="../images/stambridgelogosmall.jpg" style={imgStyle}></img>
 								</div>
 							</li>
 							<li className="divider"></li>
@@ -52,9 +52,9 @@ class Navigation extends React.Component{
 									</a>
 									<div className="collapsible-body">
 										<ul>
-											<li><a className="waves-effect waves-indigo" href="#">Curriculum</a></li>
+											<li><a className="waves-effect waves-indigo" href="#curriculum/">Curriculum</a></li>
 											<li><a className="waves-effect waves-indigo" href="#policies/">Policies</a></li>
-											<li><a className="waves-effect waves-indigo" href="#">School Performance</a></li>
+											<li><a className="waves-effect waves-indigo" href="#school-performance/">School Performance</a></li>
 											<li><a className="waves-effect waves-indigo" href="#staff/">Staff</a></li>
 											<li><a className="waves-effect waves-indigo" href="#statutory-info/">Statutory Information</a></li>
 											<li><a className="waves-effect waves-indigo" href="#uniform/">Uniform</a></li>
@@ -71,16 +71,16 @@ class Navigation extends React.Component{
 											<li><a className="waves-effect waves-indigo" href="#calendar/">Calender</a></li>
 											<li><a className="waves-effect waves-indigo" href="#letters-home/">Letters Home</a></li>
 											<li><a className="waves-effect waves-indigo" href="#newsletters/">Newsletters</a></li>
-											<li><a className="waves-effect waves-indigo" href="#">School Day</a></li>
+											<li><a className="waves-effect waves-indigo" href="#term-dates/">Term Dates</a></li>
 											<li><a className="waves-effect waves-indigo" href="#school-menu/">School Menu</a></li>
 										</ul>
 									</div>
 								</li>		
 							</ul>
 							<ul className="non-dropdown">
-								<li><a className="waves-effect waves-indigo" href="#"><b>Children</b></a></li>
-								<li><a className="waves-effect waves-indigo" href="#"><b>Admissions</b></a></li>
-								<li><a className="waves-effect waves-indigo" href="#"><b>Gallery</b></a></li>
+								<li><a className="waves-effect waves-indigo" href="#children/"><b>Children</b></a></li>
+								<li><a className="waves-effect waves-indigo" href="#admissions/"><b>Admissions</b></a></li>
+								<li><a className="waves-effect waves-indigo" href="#gallery/"><b>Gallery</b></a></li>
 								<li><a className="waves-effect waves-indigo" href="#contact-us/"><b>Contact Us</b></a></li>
 							</ul>
 						</ul>
@@ -98,18 +98,18 @@ class Navigation extends React.Component{
 									<i className="material-icons right">arrow_drop_down</i>
 								</a>
 							</li>
-							<li className="col-lg-2 col-xl-2 center-align no-pads waves-effect"><a href="#">Children</a></li>
-							<li className="col-lg-2 col-xl-2 center-align no-pads waves-effect"><a href="#">Admissions</a></li>
-							<li className="col-lg-2 col-xl-2 center-align no-pads waves-effect"><a href="#">Gallery</a></li>
+							<li className="col-lg-2 col-xl-2 center-align no-pads waves-effect"><a href="#children/">Children</a></li>
+							<li className="col-lg-2 col-xl-2 center-align no-pads waves-effect"><a href="#admissions/">Admissions</a></li>
+							<li className="col-lg-2 col-xl-2 center-align no-pads waves-effect"><a href="#gallery/">Gallery</a></li>
 							<li className="col-lg-2 col-xl-2 center-align no-pads waves-effect"><a href="#contact-us/">Contact Us</a></li>
 						</ul>
 
 						<ul id="aboutDropdown" className="dropdown-content">
-							<li><a className="purple darken-4 white-text" href="#">Curriculum</a></li>
+							<li><a className="purple darken-4 white-text" href="#curriculum/">Curriculum</a></li>
 							<li className="divider"></li>
 							<li><a className="purple darken-4 white-text" href="#policies/">Policies</a></li>
 							<li className="divider"></li>
-							<li><a className="purple darken-4 white-text" href="#">School Performance</a></li>
+							<li><a className="purple darken-4 white-text" href="#school-performance/">School Performance</a></li>
 							<li className="divider"></li>
 							<li><a className="purple darken-4 white-text" href="#staff/">Staff</a></li>
 							<li className="divider"></li>
@@ -127,7 +127,7 @@ class Navigation extends React.Component{
 							<li className="divider"></li>
 							<li><a className="purple darken-4 white-text" href="#newsletters/">Newsletters</a></li>
 							<li className="divider"></li>
-							<li><a className="purple darken-4 white-text" href="#">School Day</a></li>
+							<li><a className="purple darken-4 white-text" href="#term-dates/">Term Dates</a></li>
 							<li className="divider"></li>
 							<li><a className="purple darken-4 white-text" href="#school-menu/">School Menu</a></li>
 						</ul>

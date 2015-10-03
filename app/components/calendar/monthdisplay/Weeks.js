@@ -18,6 +18,7 @@ class Weeks extends React.Component {
 					date={date.clone()} 
 					current_month={current_month}
 					selected_date={this.props.selected_date}
+					dates_with_events={this.props.dates_with_events}
 					day_button_class={this.props.day_button_class}
 					handle_select={this.props.handle_select.bind(this)}/>
 			);

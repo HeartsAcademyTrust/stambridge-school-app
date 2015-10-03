@@ -22,7 +22,7 @@ class UpcomingTermDate extends React.Component{
           <p className="flow-text">{this.props.date}</p>
         </div>
         <div className="card-action">
-          <a href="#calender" className="waves-effect btn-flat col-xs-12" style={buttonStyle}>
+          <a href="#term-dates/" className="waves-effect btn-flat col-xs-12" style={buttonStyle}>
 						<i className="material-icons right">send</i>All Term Dates
           </a>
         </div>

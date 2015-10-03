@@ -108,9 +108,15 @@ class Calendar extends React.Component {
 			return moment(event.start_time).isSame(this.state.selected_date, 'day');
 		});
 
-		// var datesWithEvents = this.state.events.reduce((previous, current) => {
-
-		// }, []);
+		var datesWithEvents = this.state.events.filter((event) =>{
+			return moment(event.start_time).isSame(this.state.current_month, 'month');
+		}).reduce((eventDays, current) => {
+			var day = moment(current.start_time).date();
+			if (eventDays.indexOf(day) == -1){
+				eventDays += day;
+			}
+			return eventDays;
+		}, []);
 
 		return(
 			<div className="row">
@@ -130,7 +136,7 @@ class Calendar extends React.Component {
 
 					<MonthDisplay current_month={this.state.current_month}
 						selected_date={this.state.selected_date} 
-						// dates_with_events={datesWithEvents}
+						dates_with_events={datesWithEvents}
 						handle_select={this.handleSelectDay.bind(this)}
 						day_button_class={dayButtonColorClass}
 						day_text_class={dayTextClass}/>

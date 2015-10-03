@@ -2,7 +2,7 @@ var path = require('path'),
 	webpack = require('webpack');
 
 module.exports = {
-	devtool: 'eval',
+	devtool: 'cheap-eval-source-map',
 	entry: [
 		'webpack-dev-server/client?http://localhost:8080',
 		'webpack/hot/only-dev-server',
@@ -11,7 +11,7 @@ module.exports = {
 	output: {
 		path: path.join(__dirname, 'public'),
 		filename: 'bundle.js',
-		publicPath: '/'
+		publicPath: '/public'
 	},
 	plugins: [
     new webpack.HotModuleReplacementPlugin()

@@ -1,5 +1,5 @@
-var path = require('path');
-var webpack = require('webpack');
+var path = require('path'),
+	webpack = require('webpack');
 
 module.exports = {
 	devtool: 'eval',
@@ -11,7 +11,7 @@ module.exports = {
 	output: {
 		path: path.join(__dirname, 'public'),
 		filename: 'bundle.js',
-		publicPath: '/public/'
+		publicPath: '/'
 	},
 	plugins: [
     new webpack.HotModuleReplacementPlugin()

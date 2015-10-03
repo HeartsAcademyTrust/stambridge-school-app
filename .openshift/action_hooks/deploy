@@ -5,3 +5,5 @@
 # could be python, php, ruby, etc.
 
 # Activate VirtualEnv in order to use the correct libraries
+echo "Executing command 'npm run build (webpack --config webpack.production.config.js --progress --profile --colors)'"
+npm run build

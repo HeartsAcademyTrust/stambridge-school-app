@@ -1,9 +1,0 @@
-#!/bin/bash
-# This is a simple build script and will be executed on your CI system if 
-# available.  Otherwise it will execute while your application is stopped
-# before the deploy step.  This script gets executed directly, so it
-# could be python, php, ruby, node etc.
-
-# Activate VirtualEnv in order to use the correct libraries
-echo "Executing command 'npm run build (webpack --config webpack.production.config.js --progress --profile --colors)'"
-npm run build

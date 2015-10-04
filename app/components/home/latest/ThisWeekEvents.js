@@ -39,7 +39,7 @@ class ThisWeek extends React.Component{
 				if (dayEvents.length === 0)	dayEvents = <p>No Events</p>;
 
 				return (
-					<div className="col-xs-12 col-sm-3"  key={index}>
+					<div className="col-xs-12 col-sm-3" key={index}>
 						<br className="hidden-sm-up"/>
 						<p className="flow-text"><b>{moment(date).format('dddd Do')}</b></p>
 						{dayEvents}

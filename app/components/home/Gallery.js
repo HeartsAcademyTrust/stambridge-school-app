@@ -12,7 +12,7 @@ class Gallery extends React.Component {
 
 		return(
 			<div className="container">
-				<a href="http://www.heartsacademytrust.co.uk/">
+				<a href="http://www.heartsacademytrust.co.uk/" target="_blank">
 					<img style={imgStyle} 
 					className="center" 
 					src="http://www.heartsacademytrust.co.uk/wp-content/uploads/2014/04/HEARTS-logoFIN-01-Copy1.png"/>

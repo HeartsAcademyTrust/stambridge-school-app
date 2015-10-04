@@ -27,7 +27,7 @@ class LettersList extends React.Component{
 						<p className="flow-text">
 							{letter.description && letter.description}
 							<br/>
-							<a href={letter.file} className="btn-floating btn-medium waves-effect waves-light red">
+							<a href={letter.file} target="_blank" className="btn-floating btn-medium waves-effect waves-light red">
 								<i className="material-icons">description</i>
 							</a>
 						</p>

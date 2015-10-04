@@ -13,9 +13,9 @@ class LatestNewsletter extends React.Component {
         <div className="card-content black-text center-align">
           <h4 className="indigo-text text-darken-4">Latest Newsletter</h4>
           <p className="flow-text">
-            <a className="purple-text text-darken-4" href={this.props.newsletter.file}> 
+            <a className="purple-text text-darken-4" href={this.props.newsletter.file} target="_blank"> 
               <i className="material-icons">description</i>
-              {moment(this.props.newsletter.date_published).format("Do MMMM YYYY")}
+              {moment(this.props.newsletter.date_published).format('Do MMMM YYYY')}
             </a>
           </p>
         </div>

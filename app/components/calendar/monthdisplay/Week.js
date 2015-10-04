@@ -47,6 +47,8 @@ class Week extends React.Component {
 				dayStyles.borderStyle = 'solid';
 				dayStyles.borderWidth = 'medium';
 			}
+
+			
 			
 			days.push(
 				<a 

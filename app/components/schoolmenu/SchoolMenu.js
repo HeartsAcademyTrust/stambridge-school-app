@@ -27,6 +27,7 @@ class SchoolMenu extends React.Component {
 					<p className="flow-text">{this.state.menu.text}</p>
 					<a style={{marginBottom:'10'}} 
 						href={this.state.menu.menu} 
+						target="_blank"
 						className="btn-floating btn-large waves-effect waves-light purple darken-4">
 						<i className="material-icons">description</i>
 					</a>

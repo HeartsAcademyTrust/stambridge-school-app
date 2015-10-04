@@ -5,9 +5,9 @@ class EventDialog extends React.Component {
 	render() {
 		return (
 			<div>
-				<a className="purple darken-4 waves-effect waves-light btn modal-trigger" href="#modal1">{this.props.event.name}</a>
+				<a className="purple darken-4 waves-effect waves-light btn modal-trigger" href={`#modal${this.props.event.id}`}>{this.props.event.name}</a>
 				
-				<div id="modal1" className="modal">
+				<div id={`modal${this.props.event.id}`} className="modal">
 					<div className="modal-content black-text">
 						<h4 className="indigo-text text-darken-4">
 							{`${this.props.event.name} - ${moment(this.props.event.start_time).format('DD/MM/YY')}`}

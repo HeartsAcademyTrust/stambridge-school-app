@@ -113,11 +113,11 @@ class Calendar extends React.Component {
 		}).reduce((eventDays, current) => {
 			var day = moment(current.start_time).date();
 			if (eventDays.indexOf(day) == -1){
-				eventDays += day;
+				eventDays.push(day);
 			}
 			return eventDays;
 		}, []);
-
+		
 		return(
 			<div className="row">
 				<div className="container center-align">

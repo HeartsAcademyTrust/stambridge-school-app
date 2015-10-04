@@ -18,7 +18,7 @@ class StatutoryInfoList extends React.Component {
 						<br/>
 						<span className="grey-text lighten-2">Uploaded: {moment(info.date_published).format('Do MMMM YYYY')}</span>
 						<br/>
-						{info.file && <a href={info.file} className="btn-floating btn-large waves-effect waves-light red">
+						{info.file && <a href={info.file} target="_blank" className="btn-floating btn-large waves-effect waves-light red">
 							<i className="material-icons">description</i>
 						</a>}</p>
 					</div>

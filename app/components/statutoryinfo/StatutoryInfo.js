@@ -27,8 +27,13 @@ class StatutoryInfo extends React.Component {
 				<div className="container">
 					<h2 className="indigo-text text-darken-4">Statutory Information</h2>
 					<p className="flow-text">
-					You can find all the information on the schools expenses, premiums, provisions 
-					and general finances here.
+						If you're interested, there is also some statutory information and finance on 
+						<a href="http://www.heartsacademytrust.co.uk/trust-information/finance-and-statutory-info/" target="_blank"> Hearts Academy Trust </a>
+						page which could be related.
+					</p>
+					<p className="flow-text">
+						You can find all the information on the schools expenses, premiums, provisions 
+						and general finances here:
 					</p>
 					<StatutoryInfoList info={this.state.statuatory_info}/>
 				</div>

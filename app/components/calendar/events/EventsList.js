@@ -33,6 +33,7 @@ class EventsList extends React.Component {
 				borderStyle: 'solid',
 				borderWidth: 'thick'
 			};
+
 			return (
 				<div key={index} className="col-xs-12">
 					<div className="card">
@@ -45,6 +46,8 @@ class EventsList extends React.Component {
 								{event.start_time && <p>Start Time: {moment(event.start_time).format('H:mm A')}</p>}
 								{event.end_time && <p>End Time: {moment(event.end_time).format('H:mm A')}</p>}
 								<br/>
+							</p>
+							<p style={{whiteSpace: 'pre-line'}}>
 								{event.description}
 							</p>
 						</div>

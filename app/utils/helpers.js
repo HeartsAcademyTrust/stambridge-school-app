@@ -36,6 +36,10 @@ function getSchoolMenu(){
 	return axios.get(`${host}/schools/${school}/school-menu/`);
 }
 
+function getSchoolCurriculum(){
+	return axios.get(`${host}/schools/${school}/school-curriculum/`);
+}
+
 function getYears(){
 	return axios.get(`${host}/schools/years/?school=${school}`);
 }
@@ -50,6 +54,7 @@ var helpers = {
 	getPerformanceReports: getPerformanceReports(),
 	getDepartments: getDepartments(),
 	getSchoolMenu: getSchoolMenu(),
+	getCurriculum: getSchoolCurriculum(),
 	getStatutoryInfo: getStatutoryInfo(),
 	getYears: getYears(),
 	getLatest() {

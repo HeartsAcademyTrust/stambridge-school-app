@@ -18,7 +18,7 @@ class PerformanceList extends React.Component {
 						<br/>
 						<span className="grey-text lighten-2">Uploaded: {moment(report.date_published).format('Do MMMM YYYY')}</span>
 						<br/>
-						{report.file && <a href={report.file} target="_blank" className="btn-floating btn-large waves-effect waves-light red">
+						{report.file && <a href={report.file} target="_blank" className="btn-floating btn-large waves-effect waves-light purple darken-4">
 							<i className="material-icons">description</i>
 						</a>}
 						</p>

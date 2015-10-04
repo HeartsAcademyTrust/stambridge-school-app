@@ -8,6 +8,10 @@ function getPolicies(){
 	return axios.get(`${host}/schools/policies/?school=${school}`);
 }
 
+function getPerformanceReports(){
+	return axios.get(`${host}/schools/performance/?school=${school}`);
+}
+
 function getDepartments(){
 	return axios.get(`${host}/jobs/departments/?school=${school}`);
 }
@@ -43,6 +47,7 @@ var helpers = {
 	getTermDates: getTermDates(),
 	getNewsletters: getNewsletters(),
 	getPolicies: getPolicies(),
+	getPerformanceReports: getPerformanceReports(),
 	getDepartments: getDepartments(),
 	getSchoolMenu: getSchoolMenu(),
 	getStatutoryInfo: getStatutoryInfo(),

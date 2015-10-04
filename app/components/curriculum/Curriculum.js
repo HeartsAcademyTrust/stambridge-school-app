@@ -22,10 +22,11 @@ class Curriculum extends React.Component {
 	}
 	render() {
 		var curriculum = this.state.curriculum;
-		return (
-			<div className="container">
-				<div className="row">
-					<h1 className="indigo-text text-darken-4">Curriculum</h1>
+		if (Object.keys(curriculum).length === 0){
+			curriculum = <p className="flow-text">There is currently no curriculum uploaded...</p>;
+		}else {
+			curriculum = (
+				<div>
 					{curriculum.extra_notes && <p className="flow-text" style={{whiteSpace: 'pre-line'}}>{curriculum.extra_notes}</p>}
 					{curriculum.date_published && <span className="grey-text lighten-2">
 						Uploaded: {moment(curriculum.date_published).format('Do MMMM YYYY')}
@@ -37,6 +38,14 @@ class Curriculum extends React.Component {
 						className="btn-floating btn-large waves-effect waves-light purple darken-4">
 						<i className="material-icons">description</i>
 					</a>}
+				</div>
+			);
+		}
+		return (
+			<div className="container">
+				<div className="row">
+					<h1 className="indigo-text text-darken-4">Curriculum</h1>
+					{curriculum}
 				</div>
 			</div>
 		);

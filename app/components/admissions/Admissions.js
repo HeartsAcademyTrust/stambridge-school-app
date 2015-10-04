@@ -22,10 +22,11 @@ class Admissions extends React.Component {
 	}
 	render() {
 		var admissions = this.state.admissions;
-		return (
-			<div className="container">
-				<div className="row">
-					<h1 className="indigo-text text-darken-4">Admissions</h1>
+		if (Object.keys(admissions).length === 0){
+			admissions = <p className="flow-text">There is currently no admissions policy uploaded...</p>;	
+		}else {
+			admissions = (
+				<div>
 					{admissions.extra_notes && <p className="flow-text" style={{whiteSpace: 'pre-line'}}>{admissions.extra_notes}</p>}
 					{admissions.date_published && <span className="grey-text lighten-2">
 						Uploaded: {moment(admissions.date_published).format('Do MMMM YYYY')}
@@ -37,6 +38,14 @@ class Admissions extends React.Component {
 						className="btn-floating btn-large waves-effect waves-light purple darken-4">
 						<i className="material-icons">description</i>
 					</a>}
+				</div>
+			);
+		}
+		return (
+			<div className="container">
+				<div className="row">
+					<h1 className="indigo-text text-darken-4">Admissions</h1>
+					{admissions}
 				</div>
 			</div>
 		);

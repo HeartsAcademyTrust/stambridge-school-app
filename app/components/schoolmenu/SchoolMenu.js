@@ -1,4 +1,5 @@
 import React from 'react';
+import SimplePage from '../common/SimplePage';
 import helpers from '../../utils/helpers';
 
 class SchoolMenu extends React.Component {
@@ -14,25 +15,14 @@ class SchoolMenu extends React.Component {
 			this.setState({
 				menu: response.data
 			});
-		})
-		.catch((response) => {
-			console.log(response);
 		});
 	}
 	render() {
 		return(
-			<div className="row">
-				<div className="container">
-					<h1 className="indigo-text text-darken-4">School Menu</h1>
-					<p className="flow-text">{this.state.menu.text}</p>
-					<a style={{marginBottom:'10'}} 
-						href={this.state.menu.menu} 
-						target="_blank"
-						className="btn-floating btn-large waves-effect waves-light purple darken-4">
-						<i className="material-icons">description</i>
-					</a>
-				</div>
-			</div>
+			<SimplePage data_exists={Object.keys(this.state.menu).length > 0} 
+				title="School Menu"
+				description={this.state.menu.text}
+				file={this.state.menu.menu}/>
 		);
 	}
 }

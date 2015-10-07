@@ -24,6 +24,10 @@ function getNewsletters(){
 	return axios.get(`${host}/schools/newsletters/?school=${school}`);
 }
 
+function getSchoolCurriculum(){
+	return axios.get(`${host}/schools/school-curriculum/?school=${school}`);
+}
+
 function getTermDates(){
 	return axios.get(`${host}/events/?school=${school}&term=True`);
 }
@@ -34,10 +38,6 @@ function getStatutoryInfo(){
 
 function getSchoolMenu(){
 	return axios.get(`${host}/schools/${school}/school-menu/`);
-}
-
-function getSchoolCurriculum(){
-	return axios.get(`${host}/schools/${school}/school-curriculum/`);
 }
 
 function getSchoolAdmissions(){

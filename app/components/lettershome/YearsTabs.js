@@ -1,5 +1,5 @@
 import React from 'react';
-import LettersList from './LettersList';
+import CollapsibleAccordian from '../common/CollapsibleAccordian';
 
 class YearsTabs extends React.Component {
 	componentDidUpdate(){
@@ -16,8 +16,19 @@ class YearsTabs extends React.Component {
 		var yearsContent = this.props.years.map((year, index) => {
 			return (
 				<div id={index} className="col-xs-12" key={index}>
-					{year.letters.length === 0 ? <p className="flow-text purple-text text-darken-4">No letters currently uploaded for <b>{year.year}</b>...</p> : 
-					<LettersList letters={year.letters} />}
+					{
+						year.letters.length === 0 ? 
+							<p className="flow-text purple-text text-darken-4">No letters currently uploaded for <b>{year.year}</b></p> 
+							: <CollapsibleAccordian data={year.letters}
+									title_key='title'
+									extra_notes_key='description'
+									date_published_key='deadline'
+									date_format='ddd Do MMM'
+									file_key='file' 
+									show_info_icon={false}
+									show_time_icon={true} 
+									deadline_date={true} />
+					}
 				</div>
 			);
 		});

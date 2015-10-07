@@ -15,9 +15,6 @@ class LettersHome extends React.Component {
 			this.setState({
 				years: response.data
 			});
-		})
-		.catch((response) => {
-			console.log(response);
 		});
 	}
 	render() {
@@ -26,9 +23,9 @@ class LettersHome extends React.Component {
 				<div className="container">
 					<h1 className="indigo-text text-darken-4">Letters Home</h1>
 					<p className="flow-text">
-						Please choose the age group with the tabs below for the letters you'd like to view
+						Please choose the age group with the tabs below for the letters you would like to view
 					</p>
-					<YearsTabs years={this.state.years}/>
+					<YearsTabs years={this.state.years} data_key='letters' />
 				</div>
 			</div>
 		);

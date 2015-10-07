@@ -1,12 +1,12 @@
 import React from 'react';
-import moment from 'moment';
+import CollapsibleAccordian from '../common/CollapsibleAccordian';
 import helpers from '../../utils/helpers';
 
 class Curriculum extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			curriculum: {}
+			curriculum: []
 		};
 	}
 	componentDidMount(){
@@ -15,37 +15,22 @@ class Curriculum extends React.Component {
 			this.setState({
 				curriculum: response.data
 			});
-		})
-		.catch((response) => {
-			console.log(response);
 		});
 	}
 	render() {
-		var curriculum = this.state.curriculum;
-		if (Object.keys(curriculum).length === 0){
-			curriculum = <p className="flow-text">There is currently no curriculum uploaded...</p>;
-		}else {
-			curriculum = (
-				<div>
-					{curriculum.extra_notes && <p className="flow-text" style={{whiteSpace: 'pre-line'}}>{curriculum.extra_notes}</p>}
-					{curriculum.date_published && <span className="grey-text lighten-2">
-						Uploaded: {moment(curriculum.date_published).format('Do MMMM YYYY')}
-					</span>}
-					<br/>
-					{curriculum.file && <a href={curriculum.file} 
-						target="_blank"
-						style={{marginBottom:'10'}} 
-						className="btn-floating btn-large waves-effect waves-light purple darken-4">
-						<i className="material-icons">description</i>
-					</a>}
-				</div>
-			);
-		}
 		return (
 			<div className="container">
 				<div className="row">
 					<h1 className="indigo-text text-darken-4">Curriculum</h1>
-					{curriculum}
+					<CollapsibleAccordian data={this.state.curriculum}
+						title_key='title'
+						extra_notes_key='extra_notes'
+						date_published_key='date_published'
+						date_format='YYYY'
+						file_key='file' 
+						show_info_icon={true}
+						show_time_icon={false} 
+						deadline_date={false} />
 				</div>
 			</div>
 		);

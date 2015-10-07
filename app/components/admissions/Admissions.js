@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+import SimplePage from '../common/SimplePage';
 import helpers from '../../utils/helpers';
 
 class Admissions extends React.Component {
@@ -15,40 +15,17 @@ class Admissions extends React.Component {
 			this.setState({
 				admissions: response.data
 			});
-		})
-		.catch((response) => {
-			console.log(response);
 		});
 	}
 	render() {
-		var admissions = this.state.admissions;
-		if (Object.keys(admissions).length === 0){
-			admissions = <p className="flow-text">There is currently no admissions policy uploaded...</p>;	
-		}else {
-			admissions = (
-				<div>
-					{admissions.extra_notes && <p className="flow-text" style={{whiteSpace: 'pre-line'}}>{admissions.extra_notes}</p>}
-					{admissions.date_published && <span className="grey-text lighten-2">
-						Uploaded: {moment(admissions.date_published).format('Do MMMM YYYY')}
-					</span>}
-					<br/>
-					{admissions.file && <a href={admissions.file} 
-						target="_blank"
-						style={{marginBottom:'10'}} 
-						className="btn-floating btn-large waves-effect waves-light purple darken-4">
-						<i className="material-icons">description</i>
-					</a>}
-				</div>
-			);
-		}
 		return (
-			<div className="container">
-				<div className="row">
-					<h1 className="indigo-text text-darken-4">Admissions</h1>
-					{admissions}
-				</div>
-			</div>
-		);
+			<SimplePage data_exists={Object.keys(this.state.admissions).length > 0} 
+				title="Admissions"
+				description={this.state.admissions.extra_notes}
+				date_published={this.state.admissions.date_published}
+				file={this.state.admissions.file}/>
+			);
+
 	}
 }
 

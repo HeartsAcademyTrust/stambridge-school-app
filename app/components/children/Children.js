@@ -1,6 +1,6 @@
 import React from 'react';
-import helpers from '../../utils/helpers';
 import YearsTabs from './YearsTabs';
+import helpers from '../../utils/helpers';
 
 class Children extends React.Component {
 	constructor(props){
@@ -15,9 +15,6 @@ class Children extends React.Component {
 			this.setState({
 				years: response.data
 			});
-		})
-		.catch((response) => {
-			console.log(response);
 		});
 	}
 	render() {
@@ -29,7 +26,7 @@ class Children extends React.Component {
 					<p className="flow-text">
 						Please choose the age group with the tabs below for the homework you would like to view:
 					</p>
-					<YearsTabs years={this.state.years}/>
+					<YearsTabs years={this.state.years} />
 				</div>
 			</div>
 		);

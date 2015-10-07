@@ -1,6 +1,6 @@
 import React from 'react';
-import PerformanceList from './PerformanceList';
 import helpers from '../../utils/helpers';
+import CollapsibleAccordian from '../common/CollapsibleAccordian';
 
 class SchoolPerformance extends React.Component {
 	constructor(props){
@@ -15,9 +15,6 @@ class SchoolPerformance extends React.Component {
 			this.setState({
 				performance_reports: response.data
 			});
-		})
-		.catch((response) => {
-			console.log(response);
 		});
 	}
 	render() {
@@ -29,7 +26,15 @@ class SchoolPerformance extends React.Component {
 						The school performance report will be made
 						available as soon as it is released by Ofsted:
 					</p>
-					<PerformanceList reports={this.state.performance_reports} />
+					<CollapsibleAccordian data={this.state.performance_reports}
+						title_key='title'
+						extra_notes_key='extra_notes'
+						date_published_key='date_published'
+						date_format='YYYY'
+						file_key='file' 
+						show_info_icon={true}
+						show_time_icon={false} 
+						deadline_date={false} />
 				</div>
 			</div>
 		);

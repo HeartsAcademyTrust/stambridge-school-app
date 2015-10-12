@@ -15,9 +15,6 @@ class TermDates extends React.Component {
 			this.setState({
 				term_dates: response.data
 			});
-		})
-		.catch((response) => {
-			console.log(response);
 		});
 	}
 	render() {

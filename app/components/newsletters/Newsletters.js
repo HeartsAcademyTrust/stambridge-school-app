@@ -16,9 +16,6 @@ class Newsletters extends React.Component {
 			this.setState({
 				newsletters: response.data
 			});
-		})
-		.catch((response) => {
-			console.log(response);
 		});
 	}
 	componentDidUpdate(){

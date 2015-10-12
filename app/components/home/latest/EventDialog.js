@@ -17,6 +17,8 @@ class EventDialog extends React.Component {
 							{this.props.event.start_time && <p>Start Time: {moment(this.props.event.start_time).format('H:mm A')}</p>}
 							{this.props.event.end_time && <p>End Time: {moment(this.props.event.end_time).format('H:mm A')}</p>}
 							<br/>
+						</p>
+						<p style={{whiteSpace: 'pre-line'}}>
 							{this.props.event.description}
 						</p>
 					</div>

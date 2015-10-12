@@ -15,9 +15,6 @@ class Vacancies extends React.Component{
 				this.setState({
 					departments: response.data
 				});
-			})
-			.catch((response) => {
-				console.log(response);
 			});
 	}
 	render() {

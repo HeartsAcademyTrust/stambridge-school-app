@@ -6,10 +6,8 @@ class NewslettersByYearList extends React.Component {
 	render(){
 		var newslettersByYearList = this.props.newslettersByYear.map((yearsNewsletters, index) => {
 			var headerClassName = 'collapsible-header';
-			if (moment().year() === yearsNewsletters.year) {
-				headerClassName = 'collapsible-header active';
-			}
-
+			moment().year() === yearsNewsletters.year ?	headerClassName = 'collapsible-header active' : headerClassName;
+			
 			return (
 				<li key={index}>
 					<div className={headerClassName}>{yearsNewsletters.year}</div>

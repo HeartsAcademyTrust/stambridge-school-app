@@ -1,35 +1,22 @@
 import React from 'react';
-import {List, ListItem} from 'material-ui';
 
 class Uniform extends React.Component {
+	componentDidUpdate() {
+		$('#collapsible').collapsible();
+	}
 	render(){
 		return(
 			<div className="row">
 				<div className="container">
 					<h1 className="indigo-text text-darken-4 center-align">School Uniform</h1>
 					<div className="col-xs-12 col-md-6">
-						<List>
-							<ListItem 
-								primaryText="Shirt or blouse to be worn with tie." 
-								leftIcon=<i className="material-icons purple-text text-darken-4">done</i> 
-								disabled={true}/>
-							<ListItem 
-								primaryText="Grey trousers/skirts." 
-								leftIcon=<i className="material-icons purple-text text-darken-4">done</i> 
-								disabled={true}/>
-							<ListItem 
-								primaryText="Black school shoes." 
-								leftIcon=<i className="material-icons purple-text text-darken-4">done</i> 
-								disabled={true}/>
-							<ListItem 
-								primaryText="Blue 'V' neck sweatshirt / jumper" 
-								leftIcon=<i className="material-icons purple-text text-darken-4">done</i> 
-								disabled={true}/>
-							<ListItem 
-								primaryText="Tie - Yellow & Blue" 
-								leftIcon=<i className="material-icons purple-text text-darken-4">done</i> 
-								disabled={true}/>
-						</List>
+						<ul className="collapsible z-depth-0" style={{borderColor:'white'}}>
+							<div className="collapsible-header"><i className="material-icons purple-text text-darken-4">done</i> Shirt or blouse to be worn with tie.</div>
+							<div className="collapsible-header"><i className="material-icons purple-text text-darken-4">done</i> Grey trousers/skirts.</div>
+							<div className="collapsible-header"><i className="material-icons purple-text text-darken-4">done</i> Black school shoes.</div>
+							<div className="collapsible-header"><i className="material-icons purple-text text-darken-4">done</i> Blue 'V' neck sweatshirt / jumper</div>
+							<div className="collapsible-header"><i className="material-icons purple-text text-darken-4">done</i> Tie - Yellow & Blue</div>
+						</ul>
 					</div>
 
 					<div className="col-xs-12 col-md-6">
@@ -61,28 +48,32 @@ class Uniform extends React.Component {
 						<h5 className="indigo-text text-darken-4">Where to Buy</h5>
 						<p className="flow-text">
 							To buy the uniform either:
-						<List>
-							<ListItem 
-								href="http://www.schooltrendsonline.com/schools/stambridgeprimaryschoolss42ap/"
-								primaryText="School Trends Online Website" 
-								leftIcon=<i className="material-icons purple-text text-darken-4">shopping_cart</i> />
-							<ListItem 
-								primaryText="Danielle's (mapped below)"  
-								initiallyOpen={true}
-								leftIcon=<i className="material-icons purple-text text-darken-4">business</i>
-								nestedItems={[
-									<ListItem 
-										href="http://www.daniellesshop.co.uk"
-										primaryText="Website" 
-										leftIcon=<i className="material-icons purple-text text-darken-4">shopping_cart</i> />,
-									<ListItem
-										href="tel:+441702 547 738"
-										primaryText="01702 547 738"
-										leftIcon=<i className="material-icons purple-text text-darken-4">phone</i> />
-								]}
-							/>
-						</List>
+						<ul style={{borderColor:'white'}} className="collapsible z-depth-0" data-collapsible="accordion">
+							<a href="http://www.schooltrendsonline.com/schools/stambridgeprimaryschoolss42ap/" target="_blank">
+							<div className="collapsible-header active hoverable">
+								<i className="material-icons purple-text text-darken-4">shopping_cart</i>School Trends Online Website
+							</div>								
+							</a>
+							<li>
+								<div className="collapsible-header active hoverable"><i className="material-icons purple-text text-darken-4">business</i>Danielles (mapped below)</div>
+								<div className="collapsible-body hoverable">
+									<ul>
+										<a href="http://www.daniellesshop.co.uk" target="_blank">
+											<div style={{paddingLeft:'36px'}} className="collapsible-header hoverable">
+												<i className="material-icons purple-text text-darken-4">shopping_cart</i> Website
+											</div>
+										</a>
+										<a href="tel:+441702 547 738">
+											<div style={{paddingLeft:'36px'}} className="collapsible-header hoverable">
+												<i className="material-icons purple-text text-darken-4">phone</i> 01702 547 738
+											</div>
+										</a>
+									</ul>
+								</div>
+							</li>
+						</ul>
 						</p>
+
 						<iframe className="col-xs-12"
 							height="350" 
 							frameBorder="0" 

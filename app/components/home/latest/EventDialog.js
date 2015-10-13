@@ -12,12 +12,10 @@ class EventDialog extends React.Component {
 						<h4 className="indigo-text text-darken-4">
 							{`${this.props.event.name} - ${moment(this.props.event.start_time).format('DD/MM/YY')}`}
 						</h4>
-						<p>
-							{this.props.event.end_time && <p>Duration: {moment(this.props.event.end_time).to(moment(this.props.event.start_time), true)}</p>}
-							{this.props.event.start_time && <p>Start Time: {moment(this.props.event.start_time).format('H:mm A')}</p>}
-							{this.props.event.end_time && <p>End Time: {moment(this.props.event.end_time).format('H:mm A')}</p>}
-							<br/>
-						</p>
+						{this.props.event.end_time && <p>Duration: {moment(this.props.event.end_time).to(moment(this.props.event.start_time), true)}</p>}
+						{this.props.event.start_time && <p>Start Time: {moment(this.props.event.start_time).format('H:mm A')}</p>}
+						{this.props.event.end_time && <p>End Time: {moment(this.props.event.end_time).format('H:mm A')}</p>}
+						<br/>
 						<p style={{whiteSpace: 'pre-line'}}>
 							{this.props.event.description}
 						</p>

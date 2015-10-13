@@ -22,9 +22,6 @@ class LatestNews extends React.Component {
 				latest_newsletter: response.latest_newsletter,
 				term_dates: response.term_dates
 			});
-		})
-		.catch((response) => {
-			console.log(response);
 		});
 	}
 	render(){

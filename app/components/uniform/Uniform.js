@@ -48,11 +48,12 @@ class Uniform extends React.Component {
 						<h5 className="indigo-text text-darken-4">Where to Buy</h5>
 						<p className="flow-text">
 							To buy the uniform either:
+						</p>
 						<ul style={{borderColor:'white'}} className="collapsible z-depth-0" data-collapsible="accordion">
 							<a href="http://www.schooltrendsonline.com/schools/stambridgeprimaryschoolss42ap/" target="_blank">
-							<div className="collapsible-header active hoverable">
-								<i className="material-icons purple-text text-darken-4">shopping_cart</i>School Trends Online Website
-							</div>								
+								<div className="collapsible-header active hoverable">
+									<i className="material-icons purple-text text-darken-4">shopping_cart</i>School Trends Online Website
+								</div>								
 							</a>
 							<li>
 								<div className="collapsible-header active hoverable"><i className="material-icons purple-text text-darken-4">business</i>Danielles (mapped below)</div>
@@ -72,7 +73,6 @@ class Uniform extends React.Component {
 								</div>
 							</li>
 						</ul>
-						</p>
 
 						<iframe className="col-xs-12"
 							height="350" 

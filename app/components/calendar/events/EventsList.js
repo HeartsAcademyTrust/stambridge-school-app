@@ -41,12 +41,10 @@ class EventsList extends React.Component {
 							<span style={{padding:'20px'}} className="card-title purple-text text-darken-3">{`${index + 1}) ${event.name}`}</span>
 						</div>
 						<div className="card-content left-align" style={contentStyle}>
-							<p>
-								{event.end_time && <p>Duration: {moment(event.end_time).to(moment(event.start_time), true)}</p>}
-								{event.start_time && <p>Start Time: {moment(event.start_time).format('H:mm A')}</p>}
-								{event.end_time && <p>End Time: {moment(event.end_time).format('H:mm A')}</p>}
-								<br/>
-							</p>
+							{event.end_time && <p>Duration: {moment(event.end_time).to(moment(event.start_time), true)}</p>}
+							{event.start_time && <p>Start Time: {moment(event.start_time).format('H:mm A')}</p>}
+							{event.end_time && <p>End Time: {moment(event.end_time).format('H:mm A')}</p>}
+							<br/>
 							<p style={{whiteSpace: 'pre-line'}}>
 								{event.description}
 							</p>

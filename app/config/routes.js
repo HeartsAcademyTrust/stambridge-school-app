@@ -17,26 +17,26 @@ import SchoolMenu from '../components/schoolmenu/SchoolMenu';
 import Children from '../components/children/Children';
 import Admissions from '../components/admissions/Admissions';
 import Gallery from '../components/gallery/Gallery';
-import {Route, DefaultRoute} from 'react-router';
+import {Route, IndexRoute} from 'react-router';
 
 export default (
-	<Route name="app" path="/" handler={Main}>
-		<Route name="contact-us" path="contact-us/" handler={ContactUs} />
-		<Route name="curriculum" path="curriculum/" handler={Curriculum} />
-		<Route name="policies" path="policies/" handler={Policies} />
-		<Route name="school-performance" path="school-performance/" handler={SchoolPerformance} />
-		<Route name="staff" path="staff/" handler={Staff} />
-		<Route name="statutory-info" path="statutory-info/" handler={StatutoryInfo} />
-		<Route name="uniform" path="uniform/" handler={Uniform} />
-		<Route name="vacancies" path="vacancies/" handler={Vacancies} />
-		<Route name="calendar" path="calendar/" handler={Calendar} />
-		<Route name="letters-home" path="letters-home/" handler={LettersHome} />
-		<Route name="newsletters" path="newsletters/" handler={Newsletters} />
-		<Route name="term-dates" path="term-dates/" handler={TermDates} />
-		<Route name="school-menu" path="school-menu/" handler={SchoolMenu} />
-		<Route name="children" path="children/" handler={Children} />
-		<Route name="admissions" path="admissions/" handler={Admissions} />
-		<Route name="gallery" path="gallery/" handler={Gallery} />
-		<DefaultRoute handler={Home} />
+	<Route name="app" path="/" component={Main}>
+		<IndexRoute component={Home} />
+		<Route path="contact-us" component={ContactUs} />
+		<Route path="curriculum" component={Curriculum} />
+		<Route path="policies" component={Policies} />
+		<Route path="school-performance" component={SchoolPerformance} />
+		<Route path="staff" component={Staff} />
+		<Route path="statutory-info" component={StatutoryInfo} />
+		<Route path="uniform" component={Uniform} />
+		<Route path="vacancies" component={Vacancies} />
+		<Route path="calendar" component={Calendar} />
+		<Route path="letters-home" component={LettersHome} />
+		<Route path="newsletters" component={Newsletters} />
+		<Route path="term-dates" component={TermDates} />
+		<Route path="school-menu" component={SchoolMenu} />
+		<Route path="children" component={Children} />
+		<Route path="admissions" component={Admissions} />
+		<Route path="gallery" component={Gallery} />
 	</Route>
 );

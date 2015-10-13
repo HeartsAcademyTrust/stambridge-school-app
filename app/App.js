@@ -1,14 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Router from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import routes from './config/routes';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
 
-//Needed for onTouchTap
-//Can go away when react 1.0 release
-//Check this repo:
-//https://github.com/zilverline/react-tap-event-plugin
-injectTapEventPlugin();
-
-Router.run(routes, (Root, state) => {
-	React.render(<Root {...state} />, document.getElementById('app'));
-});
+ReactDOM.render(<Router routes={routes} history={createBrowserHistory()} />, document.getElementById('app'));

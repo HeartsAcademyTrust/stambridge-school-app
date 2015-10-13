@@ -1,5 +1,4 @@
 import React from 'react';
-import {RouteHandler} from 'react-router';
 import Banner from './Banner';
 import Footer from './Footer';
 import Navigation from './Navigation';
@@ -14,7 +13,7 @@ class Main extends React.Component{
 					<Navigation />
 					
 					<div className="white">	
-						<RouteHandler />
+						{this.props.children}
 					</div>
 
 					<Footer />
@@ -23,9 +22,5 @@ class Main extends React.Component{
 		);
 	}
 }
-
-Main.childContextTypes = {
-	muiTheme: React.PropTypes.object
-};
 
 export default Main;

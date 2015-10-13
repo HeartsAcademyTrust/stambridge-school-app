@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 class UpcomingTermDate extends React.Component{
 	render() {
@@ -22,9 +23,9 @@ class UpcomingTermDate extends React.Component{
           <p className="flow-text">{this.props.date}</p>
         </div>
         <div className="card-action">
-          <a href="#term-dates/" className="waves-effect btn-flat col-xs-12" style={buttonStyle}>
+          <Link to="/term-dates" className="waves-effect btn-flat col-xs-12" style={buttonStyle}>
 						<i className="material-icons right">send</i>All Term Dates
-          </a>
+          </Link>
         </div>
       </div>
 		);

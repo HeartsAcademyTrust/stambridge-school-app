@@ -1,5 +1,6 @@
 import React from 'react';
 import moment from 'moment';
+import {Link} from 'react-router';
 
 class LatestNewsletter extends React.Component {
 	render(){
@@ -20,9 +21,9 @@ class LatestNewsletter extends React.Component {
           </p>
         </div>
         <div className="card-action">
-          <a href="#newsletters/" className="waves-effect btn-flat col s12" style={buttonStyle}>
+          <Link to="/newsletters" className="waves-effect btn-flat col s12" style={buttonStyle}>
             <i className="material-icons right">send</i>All Newsletters
-          </a>
+          </Link>
         </div>
       </div>
 		); 

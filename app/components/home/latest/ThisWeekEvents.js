@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import EventDialog from './EventDialog';
+import {Link} from 'react-router';
 
 
 class ThisWeek extends React.Component{
@@ -61,9 +62,9 @@ class ThisWeek extends React.Component{
 					</div>
 					<div className="row">
 						{secondHalfWeekEvents}
-						<a href="#calendar/" className="purple-text text-darken-4 waves-effect waves-light btn-flat btn-large col-xs-12 col-sm-3">
+						<Link to="/calendar" className="purple-text text-darken-4 waves-effect waves-light btn-flat btn-large col-xs-12 col-sm-3">
 							<i className="material-icons left">today</i>Full Calender
-						</a>
+						</Link>
 					</div>
         </div>
       </div>

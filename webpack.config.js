@@ -11,11 +11,11 @@ module.exports = {
 	output: {
 		path: path.join(__dirname, 'public'),
 		filename: 'bundle.js',
-		publicPath: '/'
+		publicPath: '/public/'
 	},
 	plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
+		new webpack.HotModuleReplacementPlugin()
+	],
 	module: {
 		loaders: [{
 			test: /\.jsx?$/,

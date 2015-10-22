@@ -66,7 +66,7 @@ class Navigation extends React.Component{
 									</a>
 									<div className="collapsible-body">
 										<ul>
-											<li><Link className="waves-effect waves-indigo" to="/calendar">Calender</Link></li>
+											<li><Link className="waves-effect waves-indigo" to="/calendar">Calendar</Link></li>
 											<li><Link className="waves-effect waves-indigo" to="/letters-home">Letters Home</Link></li>
 											<li><Link className="waves-effect waves-indigo" to="/newsletters">Newsletters</Link></li>
 											<li><Link className="waves-effect waves-indigo" to="/term-dates">Term Dates</Link></li>
@@ -119,7 +119,7 @@ class Navigation extends React.Component{
 						</ul>
 
 						<ul id="parentsDropdown" className="dropdown-content">
-							<li><Link className="purple darken-4 white-text" to="/calendar">Calender</Link></li>
+							<li><Link className="purple darken-4 white-text" to="/calendar">Calendar</Link></li>
 							<li className="divider"></li>
 							<li><Link className="purple darken-4 white-text" to="/letters-home">Letters Home</Link></li>
 							<li className="divider"></li>

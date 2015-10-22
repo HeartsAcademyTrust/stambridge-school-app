@@ -9,7 +9,7 @@
     "openshift"
   ],
   "scripts": {
-    "start": "node server.js",
+    "start": "npm run build && node server.js",
     "start-dev": "node server-dev.js",
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
     "test": "echo \"Error: no test specified\" && exit 1"

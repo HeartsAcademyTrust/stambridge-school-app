@@ -4,9 +4,8 @@ var path = require('path'),
 module.exports = {
 	devtool: 'eval-source-map',
 	entry: [
-		'webpack-dev-server/client?http://localhost:8080',
-		'webpack/hot/only-dev-server',
-		'./app/App.js'
+		'webpack-hot-middleware/client',
+    './app/App.js'
 	],
 	output: {
 		path: path.join(__dirname, 'public'),
@@ -14,7 +13,8 @@ module.exports = {
 		publicPath: '/public/'
 	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
 	],
 	module: {
 		loaders: [{

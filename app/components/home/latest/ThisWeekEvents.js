@@ -63,7 +63,7 @@ class ThisWeek extends React.Component{
 					<div className="row">
 						{secondHalfWeekEvents}
 						<Link to="/calendar" className="purple-text text-darken-4 waves-effect waves-light btn-flat btn-large col-xs-12 col-sm-3">
-							<i className="material-icons left">today</i>Full Calender
+							<i className="material-icons left">today</i>Full Calendar
 						</Link>
 					</div>
         </div>

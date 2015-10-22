@@ -18,7 +18,7 @@ class StaffList extends React.Component{
             </div>
             {staff.extra_info && <div className="card-reveal">
               <span className="card-title grey-text text-darken-4">{staff.name}<i className="material-icons right">close</i></span>
-              <p>{staff.extra_info}</p>
+              <p style={{whiteSpace: 'pre-line'}}>{staff.extra_info}</p>
             </div>}
           </div>
         </div>

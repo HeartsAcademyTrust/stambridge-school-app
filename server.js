@@ -12,8 +12,8 @@ app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/font', express.static(path.join(__dirname, 'font')));
 
-app.get('/*', function response(req, res) {
-  res.sendFile(__dirname+'/public/index.html');
+app.get('*', function response(req, res) {
+  res.sendFile(path.join(__dirname, '/public', 'index.html'));
 });
 
 app.listen(server_port, server_ip_address, function onStart(err) {

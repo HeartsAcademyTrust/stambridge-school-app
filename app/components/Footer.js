@@ -30,23 +30,18 @@ class Footer extends React.Component {
               <h5 className="white-text">Useful Links</h5>
               <ul>
                 <li>
-                  <a href="http://schoolsfinder.direct.gov.uk/8812431/overview/" target="_blank">
-                  Gov School Information
-                  </a>
-                </li>
-                <li>
                   <a href="http://www.heartsacademytrust.co.uk/">
-                    Heart Academy Trust
+                    HEARTS Academy Trust
                   </a>
                 </li>
                 <li>
                   <a href="http://www.wickfordcofe.essex.sch.uk/welcome2.htm" target="_blank">
-                    Wickford Church Of England Infant School
+                    The Wickford Church Of England School
                   </a>
                 </li>
                 <li>
                   <a href="http://www.watermanprimaryschool.ik.org/" target="_blank">
-                    Watermans Primary School
+                    Waterman Primary School
                   </a>
                 </li>
                 <li>

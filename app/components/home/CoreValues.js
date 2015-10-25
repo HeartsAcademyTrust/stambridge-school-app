@@ -14,7 +14,7 @@ class CoreValues extends React.Component{
 						<p className="flow-text">
 							<a href="http://www.heartsacademytrust.co.uk/" target="_blank">
 							<b>HEARTS</b> Academy Trust </a> is committed to providing a happy, 
-							caring and safe learning environment for all within a values lead context where
+							caring and safe learning environment for all within a values led context where
 							everyone feels valued and grows in confidence and independence.
 						</p>
 					</div>

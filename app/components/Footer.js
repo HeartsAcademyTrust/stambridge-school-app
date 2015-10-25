@@ -53,8 +53,8 @@ class Footer extends React.Component {
             </div>
         </div>
         <div className="footer-copyright">
-          <div className="container">
-          © 2015 Created By <a href="https://uk.linkedin.com/in/vasilyshelkov" target="_blank">Vasily Shelkov</a>
+          <div className="col-xs-11 col-xs-offset-1">
+            © 2015 Created By <a href="https://uk.linkedin.com/in/vasilyshelkov" target="_blank">Vasily Shelkov</a>
           </div>
         </div>
       </footer>

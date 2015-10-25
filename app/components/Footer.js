@@ -19,7 +19,7 @@ class Footer extends React.Component {
                 <br/>
 								<a href="fax:+441702 530713"><i className="material-icons">print</i> 01702 530713</a>
 								<br/>
-								<a className="truncate" href="mailto:admin@stambridge.essex.sch.uk">
+								<a href="mailto:admin@stambridge.essex.sch.uk">
 									<i className="small material-icons">email</i>
                     admin@stambridge.essex.sch.uk
 								</a>

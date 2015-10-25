@@ -34,15 +34,28 @@ class Vacancies extends React.Component{
 		var text = (
 			<div>
 					<p className="flow-text">
-						If any these vacancies are of interest to you or you would
-						like some more information on them please <a href="#contact-us">Contact Us</a>
+						If you are interested, you can find more information at 
+						<a href="http://www.heartsacademytrust.co.uk/trust-information/recruitment/" 
+							target="_blank"> <b>HEARTS</b> Academy Trust's recruitment</a>.
+						<br />
+						<br />
+						If you would like more information on the vacancies listed, please <a href="#contact-us">Contact Us</a>
 					</p>
 					{departments}
 			</div>
 		);
 
 		if (vacancies === 0){
-			text = (<p className="flow-text">Unfortunately, Stambridge School are not currently recruiting...</p>);
+			text = (
+				<p className="flow-text">
+					If you are interested, you can find more information at 
+						<a href="http://www.heartsacademytrust.co.uk/trust-information/recruitment/" 
+							target="_blank"> <b>HEARTS</b> Academy Trust's recruitment</a>.
+					<br />
+					<br />
+					Unfortunately, Stambridge School currently do not have any vacancies listed...
+				</p>
+			);
 		}
 
 		return(

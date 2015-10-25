@@ -25,7 +25,8 @@ class StatutoryInfo extends React.Component {
 					<h2 className="indigo-text text-darken-4">Statutory Information</h2>
 					<p className="flow-text">
 						If you are interested, there is also some statutory information and finance on 
-						<a href="http://www.heartsacademytrust.co.uk/trust-information/finance-and-statutory-info/" target="_blank"> Hearts Academy Trust </a>
+						<a href="http://www.heartsacademytrust.co.uk/trust-information/finance-and-statutory-info/" 
+							target="_blank"> <b>HEARTS</b> Academy Trust </a>
 						page which could be related.
 					</p>
 					<p className="flow-text">

@@ -31,7 +31,7 @@ class Footer extends React.Component {
               <ul>
                 <li>
                   <a href="http://www.heartsacademytrust.co.uk/">
-                    HEARTS Academy Trust
+                    <b>HEARTS</b> Academy Trust
                   </a>
                 </li>
                 <li>

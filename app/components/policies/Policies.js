@@ -27,7 +27,7 @@ class Policies extends React.Component{
 					<h1 className="indigo-text text-darken-4">Policies</h1>
 					<p className="flow-text">
 						We have some general policies that apply to all the schools a part of the 
-						<a href="http://www.heartsacademytrust.co.uk/" target="_blank"> Hearts Academy Trust</a>
+						<a href="http://www.heartsacademytrust.co.uk/" target="_blank"> <b>HEARTS</b> Academy Trust</a>
 					</p>
 					<p className="flow-text">
 						Here is a list of the policies that are specific to 

@@ -17,3 +17,7 @@ Password: zpG7g1!2
 ###FTP login details
 Username: mjkhgbv982
 Password: eTt9v1$8
+
+##Flickr Photo Hosting Accout
+Username: StambridgePrimary@yahoo.co.uk
+password: stambridehosting

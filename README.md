@@ -22,3 +22,5 @@ Password: eTt9v1$8
 screenname: stambridgeprimaryschool
 email: StambridgePrimary@yahoo.co.uk
 password: stambridehosting
+
+Photobucket?

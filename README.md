@@ -19,5 +19,6 @@ Username: mjkhgbv982
 Password: eTt9v1$8
 
 ##Flickr Photo Hosting Accout
-Username: StambridgePrimary@yahoo.co.uk
+screenname: stambridgeprimaryschool
+email: StambridgePrimary@yahoo.co.uk
 password: stambridehosting

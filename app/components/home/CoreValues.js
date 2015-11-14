@@ -21,7 +21,7 @@ class CoreValues extends React.Component{
 				</div>
 				<div className="col-xs-12">
 					<div className="col-xs-12 col-sm-4 col-md-3 col-xl-2">
-						<img className="img-responsive" src="../images/mr-happy.png"/>
+						<img className="circle img-responsive" src="../images/Mr_Happy.JPG"/>
 					</div>
 					<p className="flow-text col-xs-12 col-sm-8 col-md-9 col-xl-10">
 						We promote <b className="indigo-text text-darken-4">HAPPINESS</b> through a creative, 

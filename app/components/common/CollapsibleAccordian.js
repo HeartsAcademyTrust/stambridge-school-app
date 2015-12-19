@@ -21,11 +21,11 @@ class CollapsibleAccordian extends React.Component {
 			return(
 				<li key={index}>
 					<div className={collapsibleHeaderClass}>
-						<div className="col-xs-12 col-sm-8 col-xl-9">
+						<div className="col-xs-10 col-sm-9 col-xl-9 truncate">
 							{this.props.show_info_icon && <i className="material-icons">info_outline</i>}
 							{item[this.props.title_key]}
 						</div>
-						<div className="col-xs-12 col-sm-4 col-xl-3 right-align">
+						<div className="col-xs-2 col-sm-3 col-xl-3 right-align">
 							{this.props.show_time_icon && <i className="material-icons">schedule</i>}
 							{moment(item[this.props.date_published_key]).format(this.props.date_format)}
 						</div>

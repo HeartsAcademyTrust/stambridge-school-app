@@ -9,7 +9,7 @@ class YearsTabs extends React.Component {
 	render() {
 		var yearsTabs = this.props.years.map((year, index) => {
 			return (
-				<li className="tab" key={index}><a href={`#${index}`}><b>{year.year}</b></a></li>
+				<li className="tab col-xs-2" key={index} style={{minWidth:'60px'}}><a href={`#${index}`}><b>{year.year}</b></a></li>
 			);
 		});
 

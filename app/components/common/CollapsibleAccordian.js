@@ -9,11 +9,19 @@ class CollapsibleAccordian extends React.Component {
 		var listItem = this.props.data.map((item, index) => {
 			var collapsibleHeaderClass='collapsible-header';
 			var showUploadedDate = <span className="grey-text lighten-2">Uploaded: {moment(item[this.props.date_published_key]).format('Do MMMM YYYY')}</span>
-			
+			var deadline_date_mobile = '';
+
 			if(this.props.deadline_date) {
 				var deadline = moment(item[this.props.date_published_key]);
-				moment().isAfter(deadline) ? collapsibleHeaderClass += ' red-text text-darken-2' : collapsibleHeaderClass += ' green-text text-darken-4';
+				var collapsibleHeaderClassColour = ' green-text text-darken-4';
+				moment().isAfter(deadline) ? collapsibleHeaderClassColour = ' red-text text-darken-2': collapsibleHeaderClassColour = ' green-text text-darken-4';
+				collapsibleHeaderClass += collapsibleHeaderClassColour;
 				showUploadedDate = '';
+				deadline_date_mobile = 
+					(<div className={"col-xs-12 hidden-sm-up " + collapsibleHeaderClassColour}>
+						<i className="material-icons" style={{marginRight:5, paddingTop:'5px'}}>schedule</i>
+						{moment(item[this.props.date_published_key]).format(this.props.date_format)}		  	
+					</div>);
 			} else{
 				collapsibleHeaderClass += ' purple-text text-darken-4';
 			}
@@ -21,16 +29,18 @@ class CollapsibleAccordian extends React.Component {
 			return(
 				<li key={index}>
 					<div className={collapsibleHeaderClass}>
-						<div className="col-xs-10 col-sm-9 col-xl-9 truncate">
+						<div className="col-xs-12 col-sm-7 col-md-8 truncate">
 							{this.props.show_info_icon && <i className="material-icons">info_outline</i>}
 							{item[this.props.title_key]}
 						</div>
-						<div className="col-xs-2 col-sm-3 col-xl-3 right-align">
-							{this.props.show_time_icon && <i className="material-icons">schedule</i>}
+
+						<div className="col-sm-5 col-md-4 right-align hidden-xs-down">
+							{this.props.show_time_icon && <i className="material-icons" style={{marginRight:5}}>schedule</i>}
 							{moment(item[this.props.date_published_key]).format(this.props.date_format)}
 						</div>
 					</div>
 					<div className="collapsible-body">
+					  {deadline_date_mobile}
 						<p>
 							{item[this.props.extra_notes_key] && <span className="flow-text">{item[this.props.extra_notes_key]} <br/></span>}
 							{showUploadedDate}

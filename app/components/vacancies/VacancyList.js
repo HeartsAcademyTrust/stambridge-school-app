@@ -8,7 +8,7 @@ class VacancyList extends React.Component{
           <div className="card blue-grey darken-1">
             <div className="card-content white-text">
               <span className="card-title">{vacancy.role}</span>
-              {vacancy.description && <p>{vacancy.description}</p>}
+              {vacancy.description && <p style={{whiteSpace: 'pre-line'}}>{vacancy.description}</p>}
             </div>
           </div>
         </div>

@@ -5,9 +5,26 @@ class SimplePage extends React.Component {
 	render() {
 		var page = <p className="flow-text">There is currently no {this.props.title} uploaded...</p>;
 		if (this.props.data_exists){
+			var dont_break_out_of_container = {
+				/* These are technically the same, but use both */
+	  		overflowWrap: 'break-word',
+	  		wordWrap: 'break-word',
+
+	  		msWordBreak: 'break-all',
+	  		/* This is the dangerous one in WebKit, as it breaks things wherever */
+	  		wordBreak: 'break-all',
+	  		/* Instead use this non-standard one: */
+	  		wordBreak: 'break-word',
+
+	  		/* Adds a hyphen where the word breaks, if supported (No Blink) */
+	  		msHyphens: 'auto',
+	  		mozHyphens: 'auto',
+	  		webkitHyphens: 'auto',
+	  		hyphens: 'auto'
+			};
 			page = (
 				<div>
-					{this.props.description && <p className="flow-text" >{this.props.description}</p>}
+					{this.props.description && <p className="flow-text" style={dont_break_out_of_container}>{this.props.description}</p>}
 					{this.props.date_published && <span className="grey-text lighten-2">
 						Uploaded: {moment(this.props.date_published).format('Do MMMM YYYY')}
 						<br/>

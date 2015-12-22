@@ -13,7 +13,8 @@ class UpcomingTermDate extends React.Component{
 		};
 		var buttonStyle = {
 			lineHeight: 'inherit',
-			color: '#4a148c'
+			color: '#4a148c',
+			width: '100%'
 		};
 
 		return (
@@ -23,7 +24,7 @@ class UpcomingTermDate extends React.Component{
           <p className="flow-text">{this.props.date}</p>
         </div>
         <div className="card-action">
-          <Link to="/term-dates" className="waves-effect btn-flat col-xs-12" style={buttonStyle}>
+          <Link to="/term-dates" className="waves-effect" style={buttonStyle}>
 						<i className="material-icons right">send</i>All Term Dates
           </Link>
         </div>

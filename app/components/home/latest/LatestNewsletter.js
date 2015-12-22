@@ -6,7 +6,8 @@ class LatestNewsletter extends React.Component {
 	render(){
     var buttonStyle = {
       lineHeight: 'inherit',
-      color: '#4a148c'
+      color: '#4a148c',
+      width: '100%'
     };
 
 		return(
@@ -21,7 +22,7 @@ class LatestNewsletter extends React.Component {
           </p>
         </div>
         <div className="card-action">
-          <Link to="/newsletters" className="waves-effect btn-flat col s12" style={buttonStyle}>
+          <Link to="/newsletters" className="waves-effect" style={buttonStyle}>
             <i className="material-icons right">send</i>All Newsletters
           </Link>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import InDevelopment from '../dev/InDevelopmentPage';
+import helpers from '../../utils/helpers';
 
 class Gallery extends React.Component {
     constructor(props){
@@ -25,19 +25,27 @@ class Gallery extends React.Component {
       thumbnailLabel:{ display:true, align:'center', position:'overImageOnMiddle' },
       galleryFullpageButton: true
     });
+    
+    var users_photo_size = 0; 
+    helpers.getStambridgeFlickrPhotos
+    .then((response) => {
+      users_photo_size = response.data.photos.total;
+    });
 
-    if ($('#nanoGallery1').nanoGallery('galleryCountImages') == 0) {
+    console.log(users_photo_size);
+
+    if (users_photo_size == 0) {
       $('#nanoGallery1').html("There are currently no photos uploaded in Stambridge School's photo gallery...");
       document.getElementById("nanoGallery1").className = 'flow-text';
     } else {
-      this.state.original_photos_para = (
+      this.setState({original_photos_para: (
         <p className="flow-text">
           The original photos can be found on 
           <a href="https://www.flickr.com/photos/stambridgeprimaryschool/">
             <b> Stambridge Schools Flickr</b>.
           </a>
         </p>
-      );
+      )});
     };
 	}
 

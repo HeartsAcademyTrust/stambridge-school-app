@@ -1,7 +1,9 @@
 var express = require('express');
+var favicon = require('serve-favicon');
 var path = require('path');
 
 const app = express();
+app.use(favicon(__dirname + '/public/favicon.ico'))
 
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';

@@ -1,9 +1,12 @@
 var path = require('path');
 var express = require('express');
+var favicon = require('serve-favicon');
 var webpack = require('webpack');
 var config = require('./webpack.development.config');
 
 var app = express();
+app.use(favicon(path.join(__dirname,'public','favicon.ico')));
+
 var compiler = webpack(config);
 
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
@@ -20,9 +23,9 @@ app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/font', express.static(path.join(__dirname, 'font')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/node_modules/nanogallery/dist',
-	express.static(path.join(__dirname, 'node_modules/nanogallery/dist')));
+  express.static(path.join(__dirname, 'node_modules/nanogallery/dist')));
 app.use('/node_modules/event-source-polyfill', 
-	express.static(path.join(__dirname, 'node_modules/event-source-polyfill')));
+  express.static(path.join(__dirname, 'node_modules/event-source-polyfill')));
 
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, '/public', 'index.html'));

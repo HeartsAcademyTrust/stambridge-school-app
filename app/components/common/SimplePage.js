@@ -7,20 +7,18 @@ class SimplePage extends React.Component {
 		if (this.props.data_exists){
 			var dont_break_out_of_container = {
 				/* These are technically the same, but use both */
-	  		overflowWrap: 'break-word',
-	  		wordWrap: 'break-word',
+				overflowWrap: 'break-word',
+				wordWrap: 'break-word',
 
-	  		msWordBreak: 'break-all',
-	  		/* This is the dangerous one in WebKit, as it breaks things wherever */
-	  		wordBreak: 'break-all',
-	  		/* Instead use this non-standard one: */
-	  		wordBreak: 'break-word',
+				msWordBreak: 'break-all',
+				/* Instead use this non-standard one: */
+				wordBreak: 'break-word',
 
-	  		/* Adds a hyphen where the word breaks, if supported (No Blink) */
-	  		msHyphens: 'auto',
-	  		mozHyphens: 'auto',
-	  		webkitHyphens: 'auto',
-	  		hyphens: 'auto'
+				/* Adds a hyphen where the word breaks, if supported (No Blink) */
+				msHyphens: 'auto',
+				mozHyphens: 'auto',
+				webkitHyphens: 'auto',
+				hyphens: 'auto'
 			};
 			page = (
 				<div>

@@ -14,6 +14,8 @@ app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/font', express.static(path.join(__dirname, 'font')));
 app.use('/node_modules/nanogallery/dist',
 	express.static(path.join(__dirname, 'node_modules/nanogallery/dist')));
+app.use('/node_modules/event-source-polyfill', 
+	express.static(path.join(__dirname, 'node_modules/event-source-polyfill')));
 
 app.get('*', function response(req, res) {
   res.sendFile(path.join(__dirname, '/public', 'index.html'));

@@ -7,8 +7,8 @@ import Gallery from './Gallery';
 class Home extends React.Component{
 	render(){
 		return (
-			<div>					
-				<Gallery /> 
+			<div>
+				{/*<Gallery /> */}
 
 				<div className="divider"></div>
 

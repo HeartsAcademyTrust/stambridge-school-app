@@ -5,11 +5,18 @@ module.exports = {
   entry: [
     path.join(__dirname, 'app/App.js')
   ],
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      include: path.join(__dirname, 'app'),
+      loader: 'babel'
+    }]
+  },
   output: {
     path: path.join(__dirname, '/public/'),
     filename: 'bundle.js',
     publicPath: '/public/'
-    
+
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
@@ -20,11 +27,4 @@ module.exports = {
       }
     })
   ],
-  module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      include: path.join(__dirname, 'app'),
-      loader: 'babel'
-    }]
-  },
 };

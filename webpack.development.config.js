@@ -1,26 +1,26 @@
 var path = require('path'),
-	webpack = require('webpack');
+  webpack = require('webpack');
 
 module.exports = {
-	devtool: 'eval-source-map',
-	entry: [
-		'webpack-hot-middleware/client',
+  devtool: 'eval-source-map',
+  entry: [
+    'webpack-hot-middleware/client',
     './app/App.js'
-	],
-	output: {
-		path: path.join(__dirname, 'public'),
-		filename: 'bundle.js',
-		publicPath: '/public/'
-	},
-	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
+  ],
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      include: path.join(__dirname, 'app'),
+      loader: 'babel'
+    }]
+  },
+  output: {
+    path: path.join(__dirname, 'public'),
+    filename: 'bundle.js',
+    publicPath: '/public/'
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
-	],
-	module: {
-		loaders: [{
-			test: /\.jsx?$/,
-			include: path.join(__dirname, 'app'),
-			loaders: ['react-hot', 'babel']
-		}]
-	}
+  ]
 };

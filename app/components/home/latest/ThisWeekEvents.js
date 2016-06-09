@@ -1,18 +1,18 @@
 import React from 'react';
 import moment from 'moment';
 import EventDialog from './EventDialog';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 
+class ThisWeek extends React.Component {
+  componentDidUpdate() {
+    $('.modal-trigger').leanModal({
+      opacity: 0.7, // Opacity of modal background
+      in_duration: 400, // Transition in duration
+      out_duration: 300 // Transition out duration
+    });
+  }
 
-class ThisWeek extends React.Component{
-	componentDidUpdate() {
-		$('.modal-trigger').leanModal({
-			opacity: .7, // Opacity of modal background
-			in_duration: 400, // Transition in duration
-			out_duration: 300 // Transition out duration
-		});
-	}
-	render(){
+  render() {
 		var startOfWeek = moment().startOf('week').add(1, 'd');
 		var endOfWeek = moment().endOf('week').add(1, 'd');
 
@@ -47,14 +47,14 @@ class ThisWeek extends React.Component{
 						<br className="hidden-sm-up"/>
 						<div className="divider hidden-sm-up"></div>
 					</div>
-				);	
+				);
 			});
 		}
 
 		return(
-			<div className={this.props.card_class}>
+			<div className={this.props.cardClass}>
         <div className="card-content black-text">
-				<div className="col-xs-12 center-align">
+          <div className="col-xs-12 center-align">
 						<h3 className="indigo-text text-darken-4">This Week</h3>
           </div>
           <div className="row">
@@ -72,4 +72,4 @@ class ThisWeek extends React.Component{
 	}
 }
 
-export default ThisWeek; 
+export default ThisWeek;

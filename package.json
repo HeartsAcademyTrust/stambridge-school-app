@@ -31,7 +31,7 @@
     "express": "^4.13.4",
     "history": "^3.0.0",
     "moment": "^2.11.1",
-    "nanogallery": "^5.9.1",
+    "nanogallery": "^5.10.2",
     "radium": "^0.17.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",

@@ -49,7 +49,7 @@ function getYears() {
 }
 
 function getStambridgeFlickrPhotos() {
-  return axios.get('https://api.flickr.com/services/rest/?method=flickr.photos.getContactsPublicPhotos&api_key=701429c56396a4f0cb667e3888cb9084&user_id=138772545%40N07&include_self=1&format=json&nojsoncallback=1')
+  return axios.get('https://api.flickr.com/services/rest/?method=flickr.people.getPublicPhotos&api_key=701429c56396a4f0cb667e3888cb9084&user_id=138772545%40N07&format=json&nojsoncallback=1')
 }
 
 const helpers = {

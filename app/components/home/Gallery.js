@@ -26,7 +26,7 @@ const Gallery = () => {
         through a culture of success and achievement, in which individuals can flourish as confident, happy learners.
       </p>
     </div>
-  )
+  );
 };
 
 export default Gallery;

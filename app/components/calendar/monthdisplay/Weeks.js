@@ -1,35 +1,40 @@
 import React from 'react';
 import moment from 'moment';
 import Week from './Week';
+import { StyleRoot } from 'radium';
 
-class Weeks extends React.Component {
+const Weeks = ({
+  current_month, selected_date, dates_with_events, day_button_class, handle_select
+}) => {
+  let weeks = [];
+  let endOfMonth = false;
+  const date = current_month.clone().startOf('month').add('w' - 1).day('Sunday');
+  let monthIndex = date.month();
+  let count = 0;
 
-	render() {
-		var weeks = [],
-			endOfMonth = false,
-			current_month = moment(this.props.current_month),
-			date = current_month.clone().startOf('month').add('w' -1).day('Sunday'),
-			monthIndex = date.month(),
-			count = 0;
-
-		while(!endOfMonth) {
-			weeks.push(
-				<Week key={date.toString()} 
-					date={date.clone()} 
-					current_month={current_month}
-					selected_date={this.props.selected_date}
-					dates_with_events={this.props.dates_with_events}
-					day_button_class={this.props.day_button_class}
-					handle_select={this.props.handle_select.bind(this)}/>
-			);
-			date.add(1, 'w');
-			endOfMonth = count++ >2 && monthIndex !== date.month();
-			monthIndex = date.month();
-		}	
-		return (
-			<div>{weeks}</div>
-		);
-	}
-}
+  while (!endOfMonth) {
+    weeks.push(
+      <Week
+        key={date.toString()}
+        weekDate={date.clone()}
+        current_month={moment(current_month)}
+        selected_date={selected_date}
+        dates_with_events={dates_with_events}
+        day_button_class={day_button_class}
+        handle_select={handle_select}
+      />
+    );
+    date.add(1, 'w');
+    endOfMonth = count++ > 2 && monthIndex !== date.month();
+    monthIndex = date.month();
+  }
+  return (
+    <StyleRoot>
+      <div>
+        {weeks}
+      </div>
+    </StyleRoot>
+   );
+};
 
 export default Weeks;

@@ -16,7 +16,6 @@ class Navigation extends React.Component {
         school_menu: response.data
       });
     });
-
     $('.button-collapse').sideNav();
   }
 

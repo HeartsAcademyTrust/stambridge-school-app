@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 
 const Gallery = () => {
   const imgStyle = {
@@ -21,8 +20,6 @@ const Gallery = () => {
       <h2 className="indigo-text text-darken-4" style={{ textAlign: 'center' }}>
         Welcome to Stambridge School
       </h2>
-
-      <div id="PRAWBVLC6S"></div>
 
       <p className="flow-text">
         Stambridge Primary School is committed to providing an inspirational environment,
